@@ -1,10 +1,10 @@
 {
-  "name": "brunch-app",
-  "description": "Brunch.io application",
+  "name": "etsidemain",
+  "description": "Plateforme de débat collaborative sur la question de l'indépendance de la Calédonie - Hackathon Nouméa 2017",
   "private": true,
-  "author": "Brunch",
+  "author": "Blandine Guillet, Falai Huedro, Clementine Prevot, Benjamin Piouffle",
   "version": "0.0.1",
-  "repository": "",
+  "repository": "https://github.com/Betree/etsidemain",
   "scripts": {
     "start": "brunch watch --server",
     "build": "brunch build --production"
