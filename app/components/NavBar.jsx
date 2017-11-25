@@ -1,22 +1,36 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { Link, NavLink as ReactRouterNavLink } from 'react-router-dom'
+import classNames from 'classnames'
 
 
-export default class NavBar extends React.PureComponent {
+const NavLink = props =>
+  <ReactRouterNavLink activeClassName="is-active" {...props}/>
+
+export default class NavBar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {isActive: false}
+  }
+
   render() {
     return (
       <nav className="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <Link className="navbar-item" to="/">
+          <NavLink exact className="navbar-item" to="/">
             <img src="/img/logo_white.svg" width="100"/>
-          </Link>
+          </NavLink>
+          <button className="button navbar-burger is-dark"
+                  onClick={() => this.setState({isActive: !this.state.isActive})}>
+            <span/><span/><span/>
+          </button>
         </div>
-        <div className="navbar-menu">
+        <div className={classNames("navbar-menu", {'is-active': this.state.isActive})}>
           <div className="navbar-start">
-            <Link className="navbar-item" to="/carte">Carte du débat</Link>
-            <Link className="navbar-item" to="/random">Un argument au hasard</Link>
-            <Link className="navbar-item" to="/random">Participer</Link>
-            <Link className="navbar-item" to="/about">A propos</Link>
+            <NavLink className="navbar-item" to="/contributions">Toutes les contributions</NavLink>
+            <NavLink className="navbar-item" to="/au-hasard">Un argument au hasard</NavLink>
+            <NavLink className="navbar-item" to="/carte">Carte du débat</NavLink>
+            <NavLink className="navbar-item" to="/participer">Participer</NavLink>
+            <NavLink className="navbar-item" to="/a-propos">A propos</NavLink>
           </div>
         </div>
       </nav>

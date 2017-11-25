@@ -2,14 +2,14 @@ import React from "react"
 import { connect } from 'react-redux'
 import { ReactCytoscape } from 'react-cytoscape'
 
-import getData from '../../API/index'
 import graphStyle from './style'
 import graphLayout from './layout'
 import graphOptions from './options'
 import { showModal } from '../../state/modal/reducer'
+import prepareData from './data_converter'
 
 
-@connect(state => ({}), {showModal})
+@connect(({Debate: {categories, contributions}}) => ({categories, contributions}), {showModal})
 export default class Graph extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -21,7 +21,7 @@ export default class Graph extends React.PureComponent {
     return (
       <ReactCytoscape
         cyRef={cy => this.initCy(cy)}
-        elements={this.props.data}
+        elements={prepareData(this.props.categories, this.props.contributions)}
         cytoscapeOptions={graphOptions}
         style={graphStyle}
         layout={graphLayout}
@@ -60,7 +60,7 @@ export default class Graph extends React.PureComponent {
     // Taping on argument / question (show modal)
     cy.on('tap', 'node.argument', event => {
       cy.animate({
-        zoom: 3,
+        zoom: 2,
         center: {eles: event.target},
         duration: 500,
         easing: 'ease-out',

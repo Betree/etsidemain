@@ -35,7 +35,7 @@ export default class Modal extends React.PureComponent {
     return (
       <article className="message is-success">
         <div className="message-header">
-          <p>Ce qui est vrai</p>
+          <p>C'est pas faux !</p>
         </div>
         <div className="message-body">
           Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur.
@@ -48,7 +48,7 @@ export default class Modal extends React.PureComponent {
     return (
       <article className="message is-danger">
         <div className="message-header">
-          <p>Ce qui est faux</p>
+          <p>Mouais...</p>
         </div>
         <div className="message-body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla.
@@ -61,7 +61,7 @@ export default class Modal extends React.PureComponent {
     return (
       <article className="message is-info">
         <div className="message-header">
-          <p>Quelques infos</p>
+          <p>En vous en dit +</p>
         </div>
         <div className="message-body">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur.
