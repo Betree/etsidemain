@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import NavBar from './NavBar'
 import Graph from './Graph'
-import Modal from './Modal'
+import Modal from './Utils/Modal'
 import Categories from './Pages/Categories'
 import { connect } from 'react-redux'
 import { fetchData } from '../state/debate/effects'
 import CategoryContributions from './Pages/CategoryContributions'
+import RandomContribution from './Pages/RandomContribution'
 
 
 @connect(null, {fetchData})
@@ -24,8 +25,9 @@ export default class App extends React.PureComponent {
           <Modal/>
 
           <Switch>
-            <Route path="/contributions" component={Categories}/>
             <Route path="/categories/:category" component={CategoryContributions}/>
+            <Route path="/categories" component={Categories}/>
+            <Route path="/au-hasard" component={RandomContribution}/>
             <Route path="/carte" component={Graph}/>
             <Route component={NotFound}/>
           </Switch>

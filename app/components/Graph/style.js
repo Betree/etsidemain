@@ -36,7 +36,8 @@ export default [
       'border-color': 'lightgrey',
       shape: 'cutrectangle',
       width: 'label',
-      padding: 15
+      padding: 15,
+      'text-wrap': 'wrap'
       // 'font-family': 'Fredericka the Great'
     }
   },
@@ -74,7 +75,9 @@ export default [
       'background-image': 'data(speaker.picture)',
       'background-fit': 'cover cover',
       'text-outline-color': 'white',
-      'text-outline-width': 2
+      'text-outline-width': 2,
+      'text-halign': 'right',
+      'text-valign': 'center'
       // 'opacity': 0.15
     }
   },

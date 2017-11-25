@@ -26,7 +26,7 @@ export default class NavBar extends React.Component {
         </div>
         <div className={classNames("navbar-menu", {'is-active': this.state.isActive})}>
           <div className="navbar-start">
-            <NavLink className="navbar-item" to="/contributions">Toutes les contributions</NavLink>
+            <NavLink exact={false} className="navbar-item" to="/categories">Toutes les contributions</NavLink>
             <NavLink className="navbar-item" to="/au-hasard">Un argument au hasard</NavLink>
             <NavLink className="navbar-item" to="/carte">Carte du débat</NavLink>
             <NavLink className="navbar-item" to="/participer">Participer</NavLink>
