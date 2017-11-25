@@ -52,6 +52,7 @@ export default [
       'width': 'label',
       'border-width': 1,
       'border-color': 'lightgrey',
+      'font-family': 'Bebas'
     }
   },
   {
@@ -70,7 +71,8 @@ export default [
     selector: 'node.argument',
     style: {
       'background-color': 'grey',
-      'font-size': 10,
+      'font-size': 12,
+      'font-weight': 'bold',
       'font-style': 'italic',
       'background-image': 'data(speaker.picture)',
       'background-fit': 'cover cover',

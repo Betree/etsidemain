@@ -29,5 +29,8 @@ export default class Modal extends React.PureComponent {
     </div>
 
   renderPopup = () =>
-    <this.props.type/>
+    <div>
+      <div className="modal-background popup"/>
+      <this.props.type/>
+    </div>
 }

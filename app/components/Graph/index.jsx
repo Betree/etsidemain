@@ -39,7 +39,7 @@ export default class Graph extends React.PureComponent {
       this.activeNodes = event.target.outgoers('edge,.argument').union(event.target)
       this.activeNodes.addClass('active')
       cy.animate({
-        zoom: 2,
+        zoom: 2.5,
         // fit: this.activeNodes,
         center: {eles: event.target},
         duration: 750,
@@ -61,11 +61,11 @@ export default class Graph extends React.PureComponent {
     // Taping on argument / question (show modal)
     cy.on('tap', 'node.argument', event => {
       cy.animate({
-        zoom: 2,
+        zoom: 2.5,
         center: {eles: event.target},
         duration: 500,
         easing: 'ease-out',
-        complete: () => this.props.showModal({type: ContributionModal, data: {
+        complete: () => this.props.showModal({type: ContributionModal, display: 'modal', data: {
           id: parseInt(event.target.id()) // Cytoscape uses string identifiers. Convert it back to Integer
         }})
       })

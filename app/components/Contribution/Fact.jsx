@@ -27,7 +27,7 @@ export const FactConfirm = ({message}) =>
   <Fact status="success" header="C'est pas faux!" message={message}/>
 
 export const FactRefute = ({message}) =>
-  <Fact status="danger" header="Mouais..." message={message}/>
+  <Fact status="warning" header="Mouais..." message={message}/>
 
 export const FactInfo = ({message}) =>
   <Fact status="info" header="On vous en dit +" message={message}/>

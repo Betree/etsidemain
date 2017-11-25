@@ -4,11 +4,11 @@ export default {
   animate: true,
   infinite: true,
   fit: false,
-  // nodeSpacing: (node) => {
-  //   if (node.hasClass('category'))
-  //     return node.hasClass('active') ? 50 : 20
-  //   else if (node.hasClass('main'))
-  //     return 80
-  //   return 10
-  // }
+  nodeSpacing: (node) => {
+    if (node.hasClass('category'))
+      return 10
+    else if (node.hasClass('main'))
+      return 5
+    return 10
+  }
 }
