@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { showModal } from '../../state/modal/reducer'
-import {default as ContributionCard} from '../Contribution/Card'
 import { Link } from 'react-router-dom'
+
+import { showModal } from '../../state/modal/reducer'
+import { default as ContributionCard } from '../Contribution/Card'
 import Icon from '../Utils/Icon'
 
 

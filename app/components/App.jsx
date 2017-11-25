@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import { fetchData } from '../state/debate/effects'
 import CategoryContributions from './Pages/CategoryContributions'
 import RandomContribution from './Pages/RandomContribution'
+import Home from './Home'
 
 
 @connect(null, {fetchData})
@@ -25,6 +26,7 @@ export default class App extends React.PureComponent {
           <Modal/>
 
           <Switch>
+            <Route exact path="/" component={Home}/>
             <Route path="/categories/:category" component={CategoryContributions}/>
             <Route path="/categories" component={Categories}/>
             <Route path="/au-hasard" component={RandomContribution}/>

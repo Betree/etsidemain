@@ -2,9 +2,7 @@ import React from 'react'
 
 import ContributionContent from './Content'
 import ButtonsAction from './ButtonsAction'
-import FactApprove from './FactApprove'
-import FactRefute from './FactRefute'
-import FactInfo from './FactInfo'
+import { FactInfo, FactRefute, FactConfirm } from './Fact'
 
 
 const Card = ({contribution}) => (
@@ -30,7 +28,7 @@ const Card = ({contribution}) => (
       <div className="facts">
         <div className="columns is-gapless">
           <div className="column">
-            <FactApprove message={contribution.confirm}/>
+            <FactConfirm message={contribution.confirm}/>
           </div>
           <div className="column">
             <FactRefute message={contribution.refute}/>

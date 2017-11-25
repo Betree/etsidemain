@@ -8,11 +8,12 @@ export const closeModal = createAction('MODAL/CLOSE')
 const INITIAL_STATE = new Record({
   isActive: false,
   type: null,
-  data: null
+  data: null,
+  display: "modal"
 })
 
 const ModalReducer = handleActions({
-  [showModal]: (state, {payload: {type, data}}) => state.merge({isActive: true, type, data}),
+  [showModal]: (state, {payload: {type, data, display}}) => state.merge({isActive: true, type, data, display}),
   [closeModal]: state => state.set('isActive', false)
 }, INITIAL_STATE())
 
