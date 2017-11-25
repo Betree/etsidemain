@@ -18,13 +18,13 @@ const CONTRIBUTIONS_KEY = "Contributions"
 const CATEGORIES_KEY = "Catégories"
 
 
-const createNode = (id, classes, label, deepness, data={}) => {
-  return {
-    classes, data: Object.assign({id, label, deepness}, data)
-  }
+const createNode = (id, classes, label, deepness, data=null, props=null) => {
+  const baseData = {id, label, deepness}
+  const baseProps = {classes, data: data ? Object.assign(baseData, data) : baseData}
+  return props ? Object.assign(baseProps, props) : baseProps
 }
 
-function generateLinks(sourceNode, childNodes) {
+function generateLinks(sourceNode, childNodes, deepness) {
   const links = []
   for (let childNode of childNodes) {
     links.push({
@@ -37,9 +37,9 @@ function generateLinks(sourceNode, childNodes) {
 function linkCategoriesToArguments(args) {
   const links = []
   for (let argument of args) {
-    links.push({data: {source: argument.category1, target: argument.data.id, deepness: 1}})
-    if (argument.category2 !== EMPTY_COL_VALUE)
-      links.push({data: {source: argument.category2, target: argument.data.id, deepness: 1}})
+    links.push({data: {source: argument.data.category1, target: argument.data.id, deepness: 1}})
+    if (argument.data.category2 !== EMPTY_COL_VALUE)
+      links.push({data: {source: argument.data.category2, target: argument.data.id, deepness: 1}})
   }
   return links
 
@@ -50,10 +50,7 @@ const getData = () => {
   const mainNode = createNode(
     'main', 'main',
     'Et si demain, la Nouvelle-Calédonie devenait indépendante ? Et si demain, la Nouvelle Calédonie restait dans la France ?',
-    0, {
-      position: {x: window.innerWidth / 2, y: window.innerHeight / 2}, // Middle of the screen
-      locked: true,
-    }
+    0, null, {locked: true, position: {x: window.innerWidth / 2, y: window.innerHeight / 2}}
   )
 
   // Create categories - deepness to 2 because 1 is for the link with mainNode
@@ -63,6 +60,7 @@ const getData = () => {
   const args = rawData[CONTRIBUTIONS_KEY].map(arg => createNode(arg[COL_ID], 'argument', arg[COL_TITLE], 4, {
     firstName: arg[COL_FIRST_NAME],
     lastName: arg[COL_LAST_NAME],
+    picture: "/img/head.jpg",
     content: arg[COL_URL],
     category1: arg[COL_CAEGORY_1],
     category2: arg[COL_CAEGORY_2],
@@ -78,7 +76,7 @@ const getData = () => {
     ...categories,
     ...args,
     ...generateLinks(mainNode, categories, 1),
-    ...linkCategoriesToArguments(categories, args),
+    ...linkCategoriesToArguments(args),
     // TODO ...linkReplies
   ]
 }
