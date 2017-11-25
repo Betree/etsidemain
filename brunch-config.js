@@ -14,4 +14,7 @@ exports.plugins = {
       includePaths: ["node_modules"]
     }
   },
+  copycat: {
+    "fonts": ["node_modules/font-awesome/fonts"]
+  }
 }

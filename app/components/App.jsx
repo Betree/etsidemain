@@ -37,10 +37,14 @@ export default class App extends React.PureComponent {
 
 function NotFound() {
   return (
-    <article className="message is-danger">
-      <div className="message-body">
-        La page demandée n'as pas été trouvée :(
+    <section className="section">
+      <div className="content">
+        <article className="message is-danger">
+          <div className="message-body is-size-4">
+            404 Democracy Not Found - <strong>La page demandée n'as pas été trouvée :(</strong>
+          </div>
+        </article>
       </div>
-    </article>
+    </section>
   )
 }

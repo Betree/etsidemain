@@ -15,17 +15,21 @@ const COL_CONFIRM     = 'Confirme'
 const COL_REFUTE      = 'Réfute'
 const COL_INFOS       = 'Infos'
 const COL_REPLY_TO    = 'Répond à'
+const COL_OCCUPATION  = 'Fonction'
 
 const CONTRIBUTIONS_KEY = "Contributions"
 const CATEGORIES_KEY = "Catégories"
 
 function prepareContribution(contrib) {
-  return new Argument({
+  return Argument({
     id: parseInt(contrib[COL_ID]),
     label: contrib[COL_LABEL],
-    firstName: contrib[COL_FIRST_NAME],
-    lastName: contrib[COL_LAST_NAME],
-    picture: "/img/head.jpg",
+    speaker: {
+      firstName: contrib[COL_FIRST_NAME],
+      lastName: contrib[COL_LAST_NAME],
+      picture: "/img/head.jpg",
+      occupation: contrib[COL_OCCUPATION] || "Citoyen·ne"
+    },
     content: contrib[COL_URL],
     category1: contrib[COL_CATEGORY_1],
     category2: contrib[COL_CATEGORY_2] || null,
