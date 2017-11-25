@@ -23,7 +23,8 @@
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "video-react": "^0.8.10"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2",

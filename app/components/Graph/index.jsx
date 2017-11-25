@@ -7,6 +7,7 @@ import graphLayout from './layout'
 import graphOptions from './options'
 import { showModal } from '../../state/modal/reducer'
 import prepareData from './data_converter'
+import ContributionModal from '../Contribution/ContributionModal'
 
 
 @connect(({Debate: {categories, contributions}}) => ({categories, contributions}), {showModal})
@@ -64,7 +65,9 @@ export default class Graph extends React.PureComponent {
         center: {eles: event.target},
         duration: 500,
         easing: 'ease-out',
-        complete: () => this.props.showModal(event.target.data())
+        complete: () => this.props.showModal({type: ContributionModal, data: {
+          id: parseInt(event.target.id()) // Cytoscape uses string identifiers. Convert it back to Integer
+        }})
       })
     })
     // Helpers

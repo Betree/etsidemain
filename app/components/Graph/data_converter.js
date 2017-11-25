@@ -34,7 +34,7 @@ const prepareData = (categories, contribs) => {
   // Create main node
   const mainNode = createNode(
     'main', 'main',
-    'Et si demain, la Nouvelle-Calédonie devenait indépendante ? Et si demain, la Nouvelle Calédonie restait dans la France ?',
+    'Et si demain, la Nouvelle-Calédonie devenait indépendante ?\nEt si demain, la Nouvelle Calédonie restait dans la France ?',
     0, null, {locked: true, position: {x: window.innerWidth / 2, y: window.innerHeight / 2}}
   )
 
