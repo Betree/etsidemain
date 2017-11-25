@@ -1,0 +1,38 @@
+{
+  "Contributions": [
+    {
+      "id": 1,
+      "Prénom": "José",
+      "Nom": "Bové",
+      "Titre": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis vehicula lectus. Orci varius natoque penatibus amet.",
+      "URL": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "Catégorie 1": "Emploi",
+      "Catégorie 2": "",
+      "Confirme": "Les chiffres de l'INSEE sont formels, le chomage chez les jeunes est en constante augmentation: http://www.isee.nc/population/jeunes-femmes-seniors/jeunes",
+      "Réfute": "Il n'y a toutefois aucune donnée nous permettant d'affirmer que la France serait responsable de la situation",
+      "Infos": "La loi sur l'emploi local publiée le 10 août 2010 stipule qu'un employeur doit, à diplôme égal, privilégier les demandeurs justifiants d'une durée de résidence suffisante. Pour plus de détails: https://dtenc.gouv.nc/vos-droits-vos-obligations-embauche-emploi/emploi-local",
+      "Répond à": ""
+    }
+  ],
+  "Catégories": [
+    "Culture",
+    "Économie",
+    "Éducation",
+    "Emploi",
+    "Environnement",
+    "Identité",
+    "Immigration",
+    "Justice",
+    "Médias",
+    "Militaire",
+    "Numérique",
+    "Politique",
+    "Recherche",
+    "Relations internationales",
+    "Santé",
+    "Services publics",
+    "Social",
+    "Société",
+    "Tourisme"
+  ]
+}
