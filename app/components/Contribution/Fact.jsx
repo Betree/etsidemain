@@ -12,7 +12,7 @@ const Fact = ({message, status, header}) => {
   }/>
 }
 
-const linkRenderer = props => console.log(props) ||
+const linkRenderer = props =>
   <a href={props.href} target="_BLANK">
     <Icon name="external-link"/>
     <span>

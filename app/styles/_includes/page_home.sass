@@ -1,7 +1,7 @@
 .page-home
   .video-react
-    height: 100vh
-    width: 100vw
+    height: 100vh !important
+    width: 100vw !important
     top: 0
     padding: 0 !important
     margin: 0
@@ -9,7 +9,9 @@
     z-index: 0
     overflow-y: hidden
   .video-react-control-bar
-    opacity: 0.5
+    opacity: 0
+    &:hover
+      opacity: 0.5
 
 .start-visit-popup-card
   .field.is-grouped

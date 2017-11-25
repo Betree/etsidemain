@@ -3,13 +3,18 @@ import { connect } from 'react-redux'
 import { showModal } from '../../state/modal/reducer'
 import {default as ContributionCard} from '../Contribution/Card'
 import Icon from '../Utils/Icon'
+import { clearAlreadySeen, markAsSeen } from '../../state/debate/reducer'
 
 
-@connect(state => ({contributions: state.Debate.contributions}), {showModal})
+@connect(state => ({contributions: state.Debate.contributions}), {showModal, markAsSeen, clearAlreadySeen})
 export default class RandomContribution extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {contributionIdx: this.randomContributionIdx()}
+  }
+
+  componentWillUnmount() {
+    this.props.clearAlreadySeen()
   }
 
   componentDidUpdate(oldProps) {
@@ -19,6 +24,7 @@ export default class RandomContribution extends React.PureComponent {
 
   setNewRandom() {
     this.setState({contributionIdx: this.randomContributionIdx()})
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
   }
 
   randomContributionIdx() {
@@ -34,6 +40,7 @@ export default class RandomContribution extends React.PureComponent {
     while (random === this.state.contributionIdx) {
       random = Math.floor(Math.random() * this.props.contributions.size)
     }
+    this.props.markAsSeen(random)
     return random
   }
 
@@ -43,11 +50,11 @@ export default class RandomContribution extends React.PureComponent {
     const contribution = this.props.contributions.get(this.state.contributionIdx)
     return (
       <div className="container page-random-contribution">
+        <ContributionCard contribution={contribution}/>
         <button className="button is-large" onClick={() => this.setNewRandom()}>
           <Icon name="random"/>
           <span>Un autre !</span>
         </button>
-        <ContributionCard contribution={contribution}/>
       </div>
     )
   }
