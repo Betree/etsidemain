@@ -1,18 +1,16 @@
-import { Record } from "immutable"
+import { Record, List } from "immutable"
 import { createAction, handleActions } from 'redux-actions'
 
 
-export const showModal = createAction('MODAL/SHOW')
-export const closeModal = createAction('MODAL/CLOSE')
+export const actionFetchData = createAction('DEBATE/FETCH_DATA')
 
 const INITIAL_STATE = new Record({
-  isActive: false,
-  data: null
+  categories: new List(),
+  contributions: new List()
 })
 
-const ModalReducer = handleActions({
-  [showModal]: (state, {payload}) => state.merge({isActive: true, data: payload}),
-  [closeModal]: state => state.set('isActive', false)
+const DebateReducer = handleActions({
+  [actionFetchData]: (state, {payload}) => state.merge(payload)
 }, INITIAL_STATE())
 
-export default ModalReducer
+export default DebateReducer
