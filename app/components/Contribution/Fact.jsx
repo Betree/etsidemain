@@ -24,10 +24,12 @@ const getDisplayableHostname = url =>
   url.replace(/^https?:\/\//i, "").replace(/\/.*/g, "")
 
 export const FactConfirm = ({message}) =>
-  <Fact status="success" header="C'est pas faux!" message={message}/>
+  <Fact status="success" header={<div><Icon name="thumbs-up"/><span>C'est pas faux !</span></div>} message={message}/>
 
 export const FactRefute = ({message}) =>
-  <Fact status="warning" header="Mouais..." message={message}/>
+  <Fact status="warning" header={<div><Icon name="hand-o-up"/><span>Mais...</span></div>} message={message}/>
 
 export const FactInfo = ({message}) =>
-  <Fact status="info" header="On vous en dit +" message={message}/>
+  <Fact status="info" header={<div><Icon name="info-circle"/><span>On vous en dit +</span></div>} message={message}/>
+
+

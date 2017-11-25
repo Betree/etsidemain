@@ -10,6 +10,7 @@ import { fetchData } from '../state/debate/effects'
 import CategoryContributions from './Pages/CategoryContributions'
 import RandomContribution from './Pages/RandomContribution'
 import Home from './Home'
+import GoFurther from './Pages/GoFurther'
 
 
 @connect(null, {fetchData})
@@ -27,6 +28,7 @@ export default class App extends React.PureComponent {
 
           <Switch>
             <Route exact path="/" component={Home}/>
+            <Route path="/aller-plus-loin" component={GoFurther}/>
             <Route path="/categories/:category" component={CategoryContributions}/>
             <Route path="/categories" component={Categories}/>
             <Route path="/au-hasard" component={RandomContribution}/>
