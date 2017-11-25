@@ -83,8 +83,8 @@ export default [
       // 'opacity': 0.15
     }
   },
-  {selector: '[deepness=3]', style: {opacity: 0.2}},
-  {selector: '[deepness=4]', style: {opacity: 0.1}},
+  {selector: '[deepness=3]', style: {opacity: 0.1}},
+  {selector: '[deepness=4]', style: {opacity: 0.025}},
   {selector: '[deepness>=5]', style: {opacity: 0}},
   {selector: '.active', style: {opacity: 1}},
   // {

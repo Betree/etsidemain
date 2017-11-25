@@ -4,6 +4,7 @@ export default {
   animate: true,
   infinite: true,
   fit: false,
+  randomize: true,
   nodeSpacing: (node) => {
     if (node.hasClass('category'))
       return 10

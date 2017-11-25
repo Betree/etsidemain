@@ -22,9 +22,9 @@ function generateLinks(sourceNode, childNodes, deepness) {
 function linkCategoriesToArguments(args) {
   const links = []
   for (let argument of args) {
-    links.push({data: {source: argument.data.category1, target: argument.data.id, deepness: 1}})
+    links.push({data: {source: argument.data.category1, target: argument.data.id, deepness: 3}})
     if (argument.data.category2)
-      links.push({data: {source: argument.data.category2, target: argument.data.id, deepness: 1}})
+      links.push({data: {source: argument.data.category2, target: argument.data.id, deepness: 3}})
   }
   return links
 
