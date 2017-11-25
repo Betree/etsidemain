@@ -3,6 +3,7 @@ import { Player } from 'video-react'
 import { closeModal, showModal } from '../state/modal/reducer'
 import { connect } from 'react-redux'
 import Icon from './Utils/Icon'
+import { Link } from 'react-router-dom'
 
 
 @connect(null, {showModal})
@@ -26,26 +27,22 @@ export default class Home extends React.PureComponent {
 }
 
 const PopupContent = connect(null, {closeModal})(({closeModal}) =>
-  <div className="modal-card">
-    <header className="modal-card-head">
-      <p className="modal-card-title">Commencez la visite !</p>
-      <button className="delete" aria-label="close" onClick={closeModal}/>
-    </header>
+  <div className="modal-card start-visit-popup-card">
     <section className="modal-card-body">
       <h2 className="has-text-centered title is-4">Je m'informe...</h2>
       <div className="field is-grouped">
-        <Button iconName="" label="En survolant"/>
-        <Button iconName="random" label="Au hasard"/>
-        <Button iconName="line-chart" label="En profondeur"/>
+        <Button onClick={closeModal} url="/categories" iconName="bicycle" label="En survolant"/>
+        <Button onClick={closeModal} url="/au-hasard" iconName="random" label="Au hasard"/>
+        <Button onClick={closeModal} url="/carte" iconName="line-chart" label="En profondeur"/>
       </div>
     </section>
   </div>
 )
 
-const Button = ({label, iconName}) =>
+const Button = ({label, iconName, url, onClick}) =>
   <p className="control">
-    <a className="button is-large is-info">
+    <Link to={url} className="button is-large is-info" onClick={onClick}>
       <Icon name={iconName}/>
       <span>{label}</span>
-    </a>
+    </Link>
   </p>

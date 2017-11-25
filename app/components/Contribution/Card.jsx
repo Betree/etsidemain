@@ -3,6 +3,7 @@ import React from 'react'
 import ContributionContent from './Content'
 import ButtonsAction from './ButtonsAction'
 import { FactInfo, FactRefute, FactConfirm } from './Fact'
+import SpeakerPicture from './SpeakerPicture'
 
 
 const Card = ({contribution}) => (
@@ -10,9 +11,7 @@ const Card = ({contribution}) => (
     <div className="card-content">
       <div className="media">
         <div className="media-left">
-          <figure className="image is-48x48">
-            <img src="/img/head.jpg" alt="Placeholder image"/>
-          </figure>
+          <SpeakerPicture picture={contribution.speaker.picture}/>
         </div>
         <div className="media-content">
           <p className="title is-4">{contribution.speaker.firstName} {contribution.speaker.lastName}</p>

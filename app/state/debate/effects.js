@@ -1,3 +1,5 @@
+import { Record } from 'immutable'
+
 // import rawData from '../../assets/data.json'
 import { actionFetchData } from './reducer'
 import Argument from './argument_record'
@@ -24,12 +26,12 @@ function prepareContribution(contrib) {
   return Argument({
     id: parseInt(contrib[COL_ID]),
     label: contrib[COL_LABEL],
-    speaker: {
+    speaker: new Record({
       firstName: contrib[COL_FIRST_NAME],
       lastName: contrib[COL_LAST_NAME],
-      picture: "/img/head.jpg",
+      picture: `/img/speakers/${contrib[COL_ID]}.jpg`,
       occupation: contrib[COL_OCCUPATION] || "Citoyen·ne"
-    },
+    })(),
     content: contrib[COL_URL],
     category1: contrib[COL_CATEGORY_1],
     category2: contrib[COL_CATEGORY_2] || null,

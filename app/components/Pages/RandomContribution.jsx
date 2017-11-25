@@ -38,15 +38,12 @@ export default class RandomContribution extends React.PureComponent {
   }
 
   render() {
-    console.log('----------')
-    console.log(this.props)
-    console.log(this.state)
     if (this.state.contributionIdx === null)
       return null
     const contribution = this.props.contributions.get(this.state.contributionIdx)
     return (
       <div className="container page-random-contribution">
-        <button className="button is-large is-link" onClick={() => this.setNewRandom()}>
+        <button className="button is-large" onClick={() => this.setNewRandom()}>
           <Icon name="random"/>
           <span>Un autre !</span>
         </button>

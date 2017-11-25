@@ -28,7 +28,7 @@ export default class NavBar extends React.Component {
           <div className="navbar-start">
             <NavLink onClick={this.onLinkClick} exact={false} className="navbar-item" to="/categories">Toutes les contributions</NavLink>
             <NavLink onClick={this.onLinkClick} className="navbar-item" to="/au-hasard">Un argument au hasard</NavLink>
-            <NavLink onClick={this.onLinkClick} className="navbar-item" to="/carte">Carte du débat</NavLink>
+            <NavLink onClick={this.onLinkClick} className="navbar-item" to="/carte">Carte du DEBAT</NavLink>
             <NavLink onClick={this.onLinkClick} className="navbar-item" to="/participer">Participer</NavLink>
             <NavLink onClick={this.onLinkClick} className="navbar-item" to="/aller-plus-loin">Pour aller plus loin</NavLink>
             <NavLink onClick={this.onLinkClick} className="navbar-item" to="/a-propos">A propos</NavLink>
