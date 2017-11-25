@@ -12,7 +12,10 @@
   "dependencies": {
     "bulma": "^0.6.0",
     "classnames": "^2.2.5",
+    "copycat-brunch": "^1.1.0",
+    "font-awesome": "^4.7.0",
     "immutable": "^3.8.2",
+    "isomorphic-fetch": "latest",
     "react": "^16.0.0",
     "react-cytoscape": "^1.0.6",
     "react-redux": "^5.0.6",
@@ -20,8 +23,7 @@
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0",
-    "isomorphic-fetch": "latest"
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2",

@@ -71,7 +71,7 @@ export default [
       'background-color': 'grey',
       'font-size': 10,
       'font-style': 'italic',
-      'background-image': 'data(picture)',
+      'background-image': 'data(speaker.picture)',
       'background-fit': 'cover cover',
       'text-outline-color': 'white',
       'text-outline-width': 2
