@@ -1,2 +1,32 @@
-.my-custom-class
-  color: $primary
+#cy
+  position: fixed
+  top: 0px
+  left: 0px
+  height: 100vh
+  width: 100vw
+  z-index: -1
+
+.navbar
+  opacity: 0.98
+
+.modal
+  margin-top: 60px
+  .modal-close
+    top: 72px
+    box-shadow: 1px -1px 1px 1px white
+    transition: background-color 0.5s, box-shadow 0.3s
+    &:hover
+      background: lighten($black, 15)
+      box-shadow: 1px -1px 8px 1px white
+  .modal-content
+    padding: 15px
+    border-radius: 5px
+    .message-body
+      overflow-y: auto
+      max-height: 25vh
+    .buttons
+      display: flex
+      .button
+        flex-grow: 1
+        flex-basis: 33%
+        margin: 0 5px

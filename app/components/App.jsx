@@ -2,7 +2,8 @@ import React from "react"
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import NavBar from './NavBar'
-import HelloWorld from './HelloWorld'
+import Graph from './Graph'
+import Modal from './Modal'
 
 
 export default class App extends React.PureComponent {
@@ -11,7 +12,10 @@ export default class App extends React.PureComponent {
       <Router>
         <div>
           <NavBar/>
-          <Route exact path="/" component={HelloWorld}/>
+          <Modal/>
+
+          <Route path="/" component={Categories}/>
+          <Route exact path="/carte" component={Graph}/>
         </div>
       </Router>
     )

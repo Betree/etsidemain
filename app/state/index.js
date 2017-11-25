@@ -5,11 +5,11 @@ import thunk from 'redux-thunk'
 
 
 // Reducers
-import HelloWorldReducer from './hello_world/reducer'
+import ModalReducer from './modal/reducer'
 
 // Declare reducers
 const reducers = combineReducers({
-  HelloWorld: HelloWorldReducer
+  Modal: ModalReducer
 })
 
 

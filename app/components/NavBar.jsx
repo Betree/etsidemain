@@ -7,13 +7,16 @@ export default class NavBar extends React.PureComponent {
     return (
       <nav className="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo-white.png" width="112" height="28"/>
-          </a>
+          <Link className="navbar-item" to="/">
+            <img src="/img/logo_white.svg" width="100"/>
+          </Link>
         </div>
         <div className="navbar-menu">
           <div className="navbar-start">
-            <Link className="navbar-item" to="/">Home</Link>
+            <Link className="navbar-item" to="/carte">Carte du débat</Link>
+            <Link className="navbar-item" to="/random">Un argument au hasard</Link>
+            <Link className="navbar-item" to="/random">Participer</Link>
+            <Link className="navbar-item" to="/about">A propos</Link>
           </div>
         </div>
       </nav>
