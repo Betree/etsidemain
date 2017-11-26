@@ -20,7 +20,7 @@
       "Nom": "T.",
       "Titre": "Le passeport français est reconnu dans tous les pays du monde",
       "Contenu": "",
-      "Catégorie 1": "CITOYENNETÉ",
+      "Catégorie 1": "Citoyenneté",
       "Catégorie 2": "",
       "Confirme": "",
       "Réfute": "",
@@ -62,7 +62,7 @@
       "Nom": "B.",
       "Titre": "L'élément déclencheur pour un peuple commun",
       "Contenu": "",
-      "Catégorie 1": "CITOYENNETÉ",
+      "Catégorie 1": "Citoyenneté",
       "Catégorie 2": "",
       "Confirme": "",
       "Réfute": "",
@@ -132,12 +132,12 @@
       "Nom": "T.",
       "Titre": "Que vont devenir les autres communautés ?",
       "Contenu": "",
-      "Catégorie 1": "CITOYENNETÉ",
+      "Catégorie 1": "Citoyenneté",
       "Catégorie 2": "",
       "Confirme": "",
       "Réfute": "",
       "Infos": "L'Accord de Nouméa reconnait à toutes les communautés **une légitimité à vivre en Nouvelle-Calédonie** et à contribuer à son développement. Source : https://www.ac-noumea.nc/IMG/pdf/accordsNoumea.pdf",
-      "Fonction": "",
+      "Fonction": "Serveuse",
       "Répond à": ""
     },
     {
@@ -151,7 +151,7 @@
       "Confirme": "En 2014, 938 kanak occupaient un poste de **cadre ou de profession intellectuelle supérieure** contre 7 572 personnes d’origine européenne (parmi la population active occupée de plus de 15 ans). Source : http://www.isee.nc/component/phocadownload/category/278-donnees?download=874:structure-de-la-population-des-communautes-en-2009&highlight=WyJjYXRlZ29yaWUiLCJzb2Npb3Byb2Zlc3Npb25uZWxsZSIsImNhdGVnb3JpZSBzb2Npb3Byb2Zlc3Npb25uZWxsZSJd",
       "Réfute": "",
       "Infos": "1584 personnes auraient suivi le programme 400 cadres puis son successeur le programme Cadres avenir en un peu plus de 25 ans. Objectif visé ? **Le rééquilibrage et l’accession des Kanak aux responsabilités**. 56 % des anciens stagiaires travaillent dans le public contre 44 % dans le privé\nSource : https://unc.nc/wp-content/uploads/2017/08/8_bilan_cadres_avenir.pdf",
-      "Fonction": "",
+      "Fonction": "Serveuse",
       "Répond à": ""
     },
     {
@@ -167,19 +167,30 @@
       "Infos": "La quasi-totalité des légumes exportés par la Nouvelle-Calédonie est composée par **les squashs**. Plus de 2.400 tonnes sont exportées en moyenne par an vers le Japon et la Nouvelle-Zélande.\n\nSource : http://www.davar.gouv.nc/portal/page/portal/davar/librairie/fichiers/31102252.PDF",
       "Fonction": "Vendeuse au marché",
       "Répond à": ""
+    },
+    {
+      "id": 13,
+      "Prénom": "Yohan",
+      "Nom": "T.",
+      "Titre": "Se faire acheter par la Chine",
+      "Contenu": "",
+      "Catégorie 1": "Économie",
+      "Catégorie 2": "",
+      "Confirme": "",
+      "Réfute": "",
+      "Infos": "",
+      "Fonction": "Etudiant",
+      "Répond à": ""
     }
   ],
   "Catégories": [
     "Agriculture",
-    "CITOYENNETÉ",
-    "Culture",
     "Défense",
+    "Citoyenneté",
     "Économie",
-    "Éducation",
-    "Environnement",
     "Justice",
-    "Politique",
-    "Santé",
-    "Social"
+    "Éducation",
+    "Social",
+    "Politique"
   ]
 }
