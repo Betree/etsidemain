@@ -6,17 +6,18 @@ import Graph from './Graph'
 import Modal from './Utils/Modal'
 import Categories from './Pages/Categories'
 import { connect } from 'react-redux'
-import { fetchData } from '../state/debate/effects'
+import { fetchData, fetchFacts } from '../state/debate/effects'
 import CategoryContributions from './Pages/CategoryContributions'
 import RandomContribution from './Pages/RandomContribution'
 import Home from './Home'
 import GoFurther from './Pages/GoFurther'
 
 
-@connect(null, {fetchData})
+@connect(null, {fetchData, fetchFacts})
 export default class App extends React.PureComponent {
   componentDidMount() {
     this.props.fetchData()
+    this.props.fetchFacts()
   }
 
   render() {
