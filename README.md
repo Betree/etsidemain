@@ -1,3 +1,14 @@
+**Et si demain...** est une plateforme de débat citoyen portée sur la question du réferundum d'autodetermination
+de la Nouvelle Calédonie qui aura lieu en 2018. Elle résulte d'un travail commun réalisé par Blandine Guillet,
+Falai Huedro, Clementine Prevot et Benjamin Piouffle; ainsi que celui de Jérémie Gandin qui a assuré la mise en contact
+et les reflexions initiales autour du projet.
+
+Un grand merci à l'observatoire du numérique et à toute l'équipe organisatrice du Hackathon de Nouméa sans lesquels ce
+projet n'aurait peut être jamais vu le jour.
+
+TODO: Expliquer l'aspect journalistique
+TODO: Expliquer les différentes parties
+
 # Brunch app
 
 This is a HTML5 application, built with [Brunch](http://brunch.io). This skeleton includes:
