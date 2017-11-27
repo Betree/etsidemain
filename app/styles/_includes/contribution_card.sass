@@ -1,0 +1,43 @@
+.contribution.card
+  .card-content
+    +mobile
+      padding: 0.5em
+    .title.is-5
+      font-size: 1.5em
+
+  .card-footer
+    flex-direction: column
+
+  .facts
+    margin-bottom: 2px
+    .columns
+      margin-bottom: 0
+      .column
+        flex-basis: auto
+        padding-bottom: 0
+        padding-top: 0
+        &.separator
+          width: 1%
+    .message
+      margin: 5px 1px
+      word-wrap: break-word
+      &:last-child
+        margin-bottom: 0
+      ul
+        list-style: inside
+
+  .video-react
+    margin-bottom: 1em
+
+  .contribution-actions
+    flex-direction: row
+    .button
+      margin: 0
+      border: 0
+      @media(max-width: 550px)
+        font-size: 1rem
+      @media(max-width: 355px)
+        .icon
+          display: none
+      &:not(:last-child)
+        border-right: 1px solid $border
