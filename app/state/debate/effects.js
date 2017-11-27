@@ -1,7 +1,7 @@
-import { Record, Map } from 'immutable'
+import { Record, Map, List } from 'immutable'
 
 // import rawData from '../../assets/data.json'
-import { actionFetchData, actionFetchFacts } from './reducer'
+import { actionFetchData, actionFetchFacts, setLoadingData, setLoadingFacts } from './reducer'
 import Argument from './argument_record'
 import HttpAPI from '../../API'
 
@@ -43,16 +43,18 @@ function prepareContribution(contrib) {
 }
 
 export const fetchData = () => dispatch => {
+  dispatch(setLoadingData(true))
   HttpAPI.get("/data.json").then(rawData => {
     dispatch(actionFetchData({
       categories: rawData[CATEGORIES_KEY],
-      contributions: rawData[CONTRIBUTIONS_KEY].map(prepareContribution)
+      contributions: new List(rawData[CONTRIBUTIONS_KEY].map(prepareContribution))
     }))
   })
 }
 
 export const fetchFacts = () => dispatch => {
+  dispatch(setLoadingFacts(true))
   HttpAPI.get("/facts.json").then(rawData => {
-    dispatch(actionFetchFacts(new Map(rawData)))
+    dispatch(actionFetchFacts(rawData))
   })
 }
