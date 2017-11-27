@@ -6,7 +6,7 @@ export class LoadingFrame extends React.PureComponent {
     return (
       <div className="loading-frame">
         <h2 className="title">
-          <span>Chargement</span>
+          {this.props.withLabel && <span>Chargement</span>}
           <div className="spinner">
             <div className="bounce1"/>
             <div className="bounce2"/>

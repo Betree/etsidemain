@@ -1,8 +1,12 @@
 .page-categories
   padding: 3em 1em
-  .column
+  .column > a
+    height: 100%
+    display: block
+    background: transparentize($black, 0.8)
     video
       transition: transform 0.1s
+      display: block
       +mobile
         width: 100%
       &:hover

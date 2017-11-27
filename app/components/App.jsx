@@ -42,7 +42,7 @@ export default class App extends React.PureComponent {
       return (
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route component={LoadingFrame}/>
+          <Route render={() => <LoadingFrame withLabel={true}/>}/>
         </Switch>
       )
     return (

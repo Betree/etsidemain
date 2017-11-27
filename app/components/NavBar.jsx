@@ -14,7 +14,7 @@ export default class NavBar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <NavLink exact className="navbar-item" to="/">
             <img src="/img/logo_white.svg" width="100"/>
