@@ -50,12 +50,19 @@ export default class RandomContribution extends React.PureComponent {
     const contribution = this.props.contributions.get(this.state.contributionIdx)
     return (
       <div className="container page-random-contribution">
+        {this.renderRandomButton()}
         <ContributionCard contribution={contribution}/>
-        <button className="button is-large" onClick={() => this.setNewRandom()}>
-          <Icon name="random"/>
-          <span>Un autre !</span>
-        </button>
+        {this.renderRandomButton()}
       </div>
+    )
+  }
+
+  renderRandomButton() {
+    return (
+      <button className="button is-large" onClick={() => this.setNewRandom()}>
+        <Icon name="random"/>
+        <span>Un autre !</span>
+      </button>
     )
   }
 }

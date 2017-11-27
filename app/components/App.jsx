@@ -11,9 +11,13 @@ import CategoryContributions from './Pages/CategoryContributions'
 import RandomContribution from './Pages/RandomContribution'
 import Home from './Home'
 import GoFurther from './Pages/GoFurther'
+import { LoadingFrame } from './Utils/LoadingFrame'
 
 
-@connect(null, {fetchData, fetchFacts})
+@connect(
+  state => ({isLoading: state.Debate.isLoadingFacts || state.Debate.isLoadingContributions}),
+  {fetchData, fetchFacts}
+)
 export default class App extends React.PureComponent {
   componentDidMount() {
     this.props.fetchData()
@@ -26,18 +30,30 @@ export default class App extends React.PureComponent {
         <div>
           <NavBar/>
           <Modal/>
-
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/aller-plus-loin" component={GoFurther}/>
-            <Route path="/categories/:category" component={CategoryContributions}/>
-            <Route path="/categories" component={Categories}/>
-            <Route path="/au-hasard" component={RandomContribution}/>
-            <Route path="/carte" component={Graph}/>
-            <Route component={NotFound}/>
-          </Switch>
+          <Route exact path="/" component={Home}/>
+          {this.renderRoutes()}
         </div>
       </Router>
+    )
+  }
+
+  renderRoutes = () => {
+    if (this.props.isLoading)
+      return (
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route component={LoadingFrame}/>
+        </Switch>
+      )
+    return (
+      <Switch>
+        <Route path="/aller-plus-loin" component={GoFurther}/>
+        <Route path="/categories/:category" component={CategoryContributions}/>
+        <Route path="/categories" component={Categories}/>
+        <Route path="/au-hasard" component={RandomContribution}/>
+        <Route path="/carte" component={Graph}/>
+        <Route component={NotFound}/>
+      </Switch>
     )
   }
 }

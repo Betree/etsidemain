@@ -7,7 +7,7 @@ export default class ContributionContent extends React.PureComponent {
     const {content} = this.props.contribution
     // Show video player
     if (!content)
-      return <Player src={`/videos/${this.props.contribution.id}.mp4`} type="video/mp4"/>
+      return <Player src={`/videos/${this.props.contribution.id}.mp4`} type="video/mp4" muted/>
 
     // Show text
     return content

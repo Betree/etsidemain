@@ -7,7 +7,6 @@ import { showModal } from '../../state/modal/reducer'
 import { default as ContributionCard } from '../Contribution/Card'
 import Icon from '../Utils/Icon'
 import AnimationFactCard from '../Animations/AnimationFactCard'
-import Message from '../Utils/Message'
 
 
 @connect(state => ({contributions: state.Debate.contributions, facts: state.Debate.facts}), {showModal})
@@ -29,22 +28,16 @@ export default class CategoryContributions extends React.PureComponent {
         </div>
       </section>
 
-    // Mix facts with contributions. TODO: Refactor
-    let allCards = null
-    if (contributions.size !== 0 && facts.size !== 0)
-      allCards = [
-        <div className="column is-6" key="col1">
-          {this.renderFacts(facts, "12").concat(this.renderContributions(new List([contributions.last()]), "12"))}
-        </div>,
-        <div className="column is-6" key="col2">
-          {this.renderContributions(contributions.butLast(), "12")}
-        </div>
-      ]
-    else
-      allCards = this.renderContributions(contributions)
+    // Split contributions in two batch (two columns) and mix with animated facts
+    const facts1 = facts.take(Math.floor(facts.size / 2) || 1).map(f => <AnimationFactCard key={f} fact={f}/>)
+    const facts2 = facts.skip(Math.floor(facts.size / 2) || 1).map(f => <AnimationFactCard key={f} fact={f}/>)
+    const contribs1 = contributions.take(Math.floor(contributions.size / 2) || 1).map(c => <ContributionCard key={c.id} contribution={c}/>)
+    const contribs2 = contributions.skip(Math.floor(contributions.size / 2) || 1).map(c => <ContributionCard key={c.id} contribution={c}/>)
+    const firstList = contribs1.zipAll(facts1)
+    const secondList = facts2.zipAll(contribs2)
 
     return (
-      <div>
+      <div className="page-category-contributions">
         <section className="hero is-light">
           <div className="hero-body">
             <div className="container">
@@ -60,28 +53,17 @@ export default class CategoryContributions extends React.PureComponent {
             </div>
           </div>
         </section>
-        <div className="container page-category-arguments">
-          <div className="columns is-multiline">
-            {allCards}
+        <div className="container">
+          <div className="columns">
+            <div className="column is-6" key="col1">
+              {firstList}
+            </div>
+            <div className="column is-6" key="col2">
+              {secondList}
+            </div>
           </div>
         </div>
       </div>
     )
-  }
-
-  renderContributions(contributions, size="6") {
-    return contributions.map(c => (
-      <div className={`column is-${size}`} key={c.id}>
-        <ContributionCard contribution={c}/>
-      </div>
-    ))
-  }
-
-  renderFacts(facts, size="6") {
-    return facts.map(f => (
-      <div className={`column is-${size}`} key={f}>
-        <AnimationFactCard fact={f}/>
-      </div>
-    ))
   }
 }

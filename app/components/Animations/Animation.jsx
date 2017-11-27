@@ -9,7 +9,6 @@ export default class Animation extends React.PureComponent {
   }
 
   render() {
-    console.log(this.props.src)
     return (
       <div className={this.props.className}>
         {this.renderAnimation()}

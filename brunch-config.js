@@ -6,7 +6,7 @@ exports.files = {
 exports.plugins = {
   babel: {
       presets: ['env', 'react'],
-      plugins: ["inline-json-import", "transform-decorators-legacy", "transform-class-properties"]
+      plugins: ["inline-json-import", "transform-decorators-legacy", "transform-class-properties", "transform-object-rest-spread"]
     },
   sass: {
     mode: 'native',
