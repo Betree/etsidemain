@@ -6,16 +6,28 @@ import { Link } from 'react-router-dom'
 @connect(state => ({categories: state.Debate.categories}))
 export default class Categories extends React.PureComponent {
   render() {
+    const isMobile = window.innerWidth < 700
     return (
       <div className="section page-categories">
         <div className="container columns is-multiline is-centered">
-        {this.props.categories.map(c => <AnimatedCategory key={c} category={c}/>)}
+        {isMobile === true && this.props.categories.map(c => <StaticCategory key={c} category={c}/>)}
+        {isMobile === false && this.props.categories.map(c => <AnimatedCategory key={c} category={c}/>)}
         </div>
       </div>
     )
   }
 }
 
+
+class StaticCategory extends React.PureComponent {
+  render() {
+    return (
+      <Link to={`/categories/${this.props.category}`} className="column is-one-quarter-desktop is-half-tablet">
+        <img src={`/animations/categories/${this.props.category}.jpg`}/>
+      </Link>
+    )
+  }
+}
 
 class AnimatedCategory extends React.PureComponent {
   componentDidMount() {
@@ -36,7 +48,6 @@ class AnimatedCategory extends React.PureComponent {
   }
 
   startAnimation() {
-    this.refs.player.currentTime = 0.1
     this.refs.player.play()
   }
 

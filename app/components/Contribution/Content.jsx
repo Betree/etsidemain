@@ -8,9 +8,17 @@ export default class ContributionContent extends React.PureComponent {
 
     // Show video player
     if (content)
-      return <ReactPlayer className="video" url={content} config={{youtube: {playerVars: {modestbranding: 1, controls: 1}}}}/>
+      return <YoutubeVideo src={content}/>
 
     // Show text
     return content
   }
 }
+
+
+const YoutubeVideo = ({src}) =>
+  <div className="video">
+    <div>
+      <iframe src={src.replace('https://youtu.be/', 'https://www.youtube-nocookie.com/embed/') + '?showinfo=0&hl=fr&fs=0'}/>
+    </div>
+  </div>
