@@ -1,8 +1,10 @@
 .page-category-contributions
-  &> .container> .columns
-    padding: 2em 1em
-    &> .column
-      padding: 0 0.5em
+  &> .section
+    +mobile
+      padding: 1.5rem 1.2rem
+    &> .container> .columns > .column
+      +mobile
+        padding: 0
       .card
         margin-bottom: 1em
       .card.fact video

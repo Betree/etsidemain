@@ -15,10 +15,12 @@ const ButtonsAction = ({size="large", order=[0,1,2], className="", buttonClassNa
     <Button className={buttonClassName} iconName="share-alt" size={size}>Partager</Button>
   ]
   return (
-    <div className={`buttons contribution-actions ${className}`}>
-      {buttons[order[0]]}
-      {buttons[order[1]]}
-      {buttons[order[2]]}
+    <div className={className}>
+      <div className="columns is-multiline is-gapless is-mobile">
+        <div className="column">{buttons[order[0]]}</div>
+        <div className="column">{buttons[order[1]]}</div>
+        <div className="column">{buttons[order[2]]}</div>
+      </div>
     </div>
   )
 }

@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 export default class Categories extends React.PureComponent {
   render() {
     return (
-      <div className="container page-categories">
-        <div className="columns is-multiline">
+      <div className="section page-categories">
+        <div className="container columns is-multiline is-centered">
         {this.props.categories.map(c => <AnimatedCategory key={c} category={c}/>)}
         </div>
       </div>
@@ -25,7 +25,7 @@ class AnimatedCategory extends React.PureComponent {
   render() {
     return (
       <Link to={`/categories/${this.props.category}`}
-            className="column is-3"
+            className="column is-one-quarter-desktop is-half-tablet"
             onMouseEnter={this.startAnimation.bind(this)}
             onMouseLeave={this.stopAnimation.bind(this)}>
         <video src={`/animations/categories/${this.props.category}.mp4`}

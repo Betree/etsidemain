@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom'
 
 import NavBar from './NavBar'
 import Graph from './Graph'
@@ -26,12 +26,12 @@ export default class App extends React.PureComponent {
 
   render() {
     return (
-      <Router>
-        <div>
+      <Router onUpdate={() => window.scrollTo(0, 0)}>
+        <ScrollToTop>
           <NavBar/>
           <Modal/>
           {this.renderRoutes()}
-        </div>
+        </ScrollToTop>
       </Router>
     )
   }
@@ -70,4 +70,17 @@ function NotFound() {
       </div>
     </section>
   )
+}
+
+@withRouter
+class ScrollToTop extends React.PureComponent {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0)
+    }
+  }
+
+  render() {
+    return this.props.children
+  }
 }

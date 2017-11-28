@@ -17,16 +17,7 @@ export default class CategoryContributions extends React.PureComponent {
     const facts = this.props.facts.get(category) || new List()
 
     if (contributions.size === 0)
-      return <section className="section">
-        <div className="content">
-          <article className="message is-info">
-            <div className="message-body is-size-4">
-              <Icon name="info-circle"/>&nbsp;
-              <span>Aucune contribution dans cette thématique. <a>Envoyez la votre !</a></span>
-            </div>
-          </article>
-        </div>
-      </section>
+      return this.emptyCategory()
 
     // Split contributions in two batch (two columns) and mix with animated facts
     const facts1 = facts.take(Math.floor(facts.size / 2) || 1).map(f => <AnimationFactCard key={f} fact={f}/>)
@@ -53,17 +44,30 @@ export default class CategoryContributions extends React.PureComponent {
             </div>
           </div>
         </section>
-        <div className="container">
-          <div className="columns">
-            <div className="column is-6" key="col1">
-              {firstList}
-            </div>
-            <div className="column is-6" key="col2">
-              {secondList}
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-6">{firstList}</div>
+              <div className="column is-6">{secondList}</div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
+    )
+  }
+
+  emptyCategory() {
+    return (
+      <section className="section">
+        <div className="container">
+          <article className="message is-info">
+            <div className="message-body is-size-4">
+              <Icon name="info-circle"/>&nbsp;
+              <span>Aucune contribution dans cette thématique. <a>Envoyez la votre !</a></span>
+            </div>
+          </article>
+        </div>
+      </section>
     )
   }
 }

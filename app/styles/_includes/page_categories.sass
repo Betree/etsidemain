@@ -1,13 +1,13 @@
 .page-categories
-  padding: 3em 1em
-  .column > a
-    height: 100%
-    display: block
+  padding: 2em 1em
+  .container
+    margin: 0 auto
+  .column video
     background: transparentize($black, 0.8)
-    video
-      transition: transform 0.1s
+    transition: transform 0.1s
+    &:hover
+      transform: scale(1.05)
+    +mobile
       display: block
-      +mobile
-        width: 100%
-      &:hover
-        transform: scale(1.02)
+      margin: 0 auto
+
