@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 @connect(null, {showModal})
 export default class Home extends React.PureComponent {
   render() {
-    this.props.showModal({type: PopupContent, display: 'popup'})
     return (
       <div className="page-home">
         <ReactPlayer url='https://youtu.be/QHD-5Glqc9U'

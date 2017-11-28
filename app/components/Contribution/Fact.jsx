@@ -27,7 +27,7 @@ export const FactConfirm = ({message}) =>
   <Fact status="success" header={<div><Icon name="thumbs-up"/><span>C'est pas faux !</span></div>} message={message}/>
 
 export const FactRefute = ({message}) =>
-  <Fact status="warning" header={<div><Icon name="hand-o-up"/><span>Mais...</span></div>} message={message}/>
+  <Fact status="warning" header={<div><Icon name="hand-paper-o"/><span>Mais...</span></div>} message={message}/>
 
 export const FactInfo = ({message}) =>
   <Fact status="info" header={<div><Icon name="info-circle"/><span>On vous en dit +</span></div>} message={message}/>
