@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Animation from '../Animations/Animation'
+import { Link } from 'react-router-dom'
 
 
 @connect(state => ({categories: state.Debate.categories}))
@@ -9,13 +9,39 @@ export default class Categories extends React.PureComponent {
     return (
       <div className="container page-categories">
         <div className="columns is-multiline">
-        {this.props.categories.map(c => (
-          <Animation className="column is-3" key={c} src={`/animations/categories/${c}.mp4`}
-                     linkTo={`/categories/${c}`}/>
-        ))}
+        {this.props.categories.map(c => <AnimatedCategory key={c} category={c}/>)}
         </div>
       </div>
     )
   }
 }
 
+
+class AnimatedCategory extends React.PureComponent {
+  componentDidMount() {
+    this.refs.player.playbackRate = 1.75
+  }
+
+  render() {
+    return (
+      <Link to={`/categories/${this.props.category}`}
+            className="column is-3"
+            onMouseEnter={this.startAnimation.bind(this)}
+            onMouseLeave={this.stopAnimation.bind(this)}>
+        <video src={`/animations/categories/${this.props.category}.mp4`}
+               poster={`/animations/categories/${this.props.category}.jpg`}
+               ref="player"/>
+      </Link>
+    )
+  }
+
+  startAnimation() {
+    this.refs.player.currentTime = 0.1
+    this.refs.player.play()
+  }
+
+  stopAnimation() {
+    this.refs.player.pause()
+    this.refs.player.currentTime = 0
+  }
+}

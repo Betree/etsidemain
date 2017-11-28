@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import { fetchData, fetchFacts } from '../state/debate/effects'
 import CategoryContributions from './Pages/CategoryContributions'
 import RandomContribution from './Pages/RandomContribution'
-import Home from './Home'
+import Home from './Pages/Home'
 import GoFurther from './Pages/GoFurther'
 import { LoadingFrame } from './Utils/LoadingFrame'
 
@@ -30,7 +30,6 @@ export default class App extends React.PureComponent {
         <div>
           <NavBar/>
           <Modal/>
-          <Route exact path="/" component={Home}/>
           {this.renderRoutes()}
         </div>
       </Router>
@@ -47,6 +46,7 @@ export default class App extends React.PureComponent {
       )
     return (
       <Switch>
+        <Route exact path="/" component={Home}/>
         <Route path="/aller-plus-loin" component={GoFurther}/>
         <Route path="/categories/:category" component={CategoryContributions}/>
         <Route path="/categories" component={Categories}/>

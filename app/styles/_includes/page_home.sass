@@ -1,19 +1,23 @@
 .page-home
-  .video-react
-    height: 100vh !important
-    width: 100vw !important
-    top: 0
-    padding: 0 !important
-    margin: 0
+  height: 100%
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  padding: 0
+  margin: 0
+  position: fixed
+  z-index: 0
+  overflow-y: hidden
+  &> div
     position: absolute
-    z-index: 0
-    overflow-y: hidden
-  .video-react-control-bar
-    opacity: 0
-    &:hover
-      opacity: 0.5
-  .video-react-big-play-button
-    display: none
+    top: 0
+    left: 0
+    width: 100% !important
+    height: 100% !important
+    @media (min-aspect-ratio: 16/9)
+      top: -5%
+      height: 112% !important
 
 .start-visit-popup-card
   .field.is-grouped

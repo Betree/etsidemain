@@ -11,7 +11,7 @@ const GoFurther = () =>
           <Icon name="comment"/>&nbsp;&nbsp;
           <span>Interpeller</span>
         </h2>
-        <p>Interpellez vos élus sur des sujets qui vous tiennent à &nbsp;<Icon name="heart"/></p>
+        <p>Interpellez vos élus sur les sujets qui vous tiennent à &nbsp;<Icon name="heart"/></p>
         <br/>
         <button className="button is-large">Go !</button>
       </div>
@@ -20,7 +20,7 @@ const GoFurther = () =>
           <Icon name="map-marker"/>&nbsp;
           <span>Se rencontrer</span>
         </h2>
-        <p>Rejoignez l'un des débats organisés par une association prêt de chez vous</p>
+        <p>Rejoignez un débat organisé par une association prêt de chez vous</p>
         <br/>
         <button className="button is-large">Go !</button>
       </div>

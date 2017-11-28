@@ -1,5 +1,4 @@
 import React from 'react'
-import Animation from './Animation'
 import Icon from '../Utils/Icon'
 
 
@@ -8,7 +7,9 @@ export default class AnimationFactCard extends React.PureComponent {
     return (
       <div className="card fact">
         <div className="card-image">
-          <Animation src={`/animations/facts/${this.props.fact}`}/>
+          <video src={`/animations/facts/${this.props.fact}.mp4`} ref="player" autoPlay muted loop
+                 poster={`/animations/facts/${this.props.fact}.jpg`}
+          />
         </div>
         <div className="card-footer">
           <div className="button is-medium card-footer-item">

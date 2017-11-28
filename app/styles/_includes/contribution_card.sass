@@ -26,8 +26,21 @@
       ul
         list-style: inside
 
-  .video-react
-    margin-bottom: 1em
+  .video
+    width: 100% !important
+    height: 100% !important
+    background: $black
+    &> div
+      position: relative
+      padding-bottom: 52.1%
+      padding-top: 25px
+      height: 0
+      iframe
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
 
   .contribution-actions
     flex-direction: row

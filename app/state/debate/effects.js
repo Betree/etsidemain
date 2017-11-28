@@ -10,9 +10,9 @@ const COL_ID          = 'id'
 const COL_FIRST_NAME  = 'Prénom'
 const COL_LAST_NAME   = 'Nom'
 const COL_LABEL       = 'Titre'
-const COL_URL         = 'URL'
-const COL_CATEGORY_1   = 'Catégorie 1'
-const COL_CATEGORY_2   = 'Catégorie 2'
+const COL_CONTENT     = 'Contenu'
+const COL_CATEGORY_1  = 'Catégorie 1'
+const COL_CATEGORY_2  = 'Catégorie 2'
 const COL_CONFIRM     = 'Confirme'
 const COL_REFUTE      = 'Réfute'
 const COL_INFOS       = 'Infos'
@@ -32,7 +32,7 @@ function prepareContribution(contrib) {
       picture: `/img/speakers/${contrib[COL_ID]}.jpg`,
       occupation: contrib[COL_OCCUPATION] || "Citoyen·ne"
     })(),
-    content: contrib[COL_URL],
+    content: contrib[COL_CONTENT],
     category1: contrib[COL_CATEGORY_1],
     category2: contrib[COL_CATEGORY_2] || null,
     confirm: contrib[COL_CONFIRM] || null,
