@@ -31,7 +31,7 @@ class StaticCategory extends React.PureComponent {
 
 class AnimatedCategory extends React.PureComponent {
   componentDidMount() {
-    this.refs.player.playbackRate = 1.75
+    this.refs.player.playbackRate = 1.5
   }
 
   render() {

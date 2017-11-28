@@ -6,6 +6,8 @@ import { FactInfo, FactRefute, FactConfirm } from './Fact'
 import SpeakerPicture from './SpeakerPicture'
 
 
+const BUTTONS_ORDER = [0,2,1]
+
 const Card = ({contribution}) => (
   <div className="card contribution">
     <div className="card-content">
@@ -35,7 +37,7 @@ const Card = ({contribution}) => (
         <FactInfo message={contribution.info}/>
       </div>
     </div>
-    <ButtonsAction className="card-footer" buttonClassName="card-footer-item" size="medium" order={[0,2,1]}/>
+    <ButtonsAction className="card-footer" buttonClassName="card-footer-item" size="medium" order={BUTTONS_ORDER}/>
   </div>
 )
 

@@ -11,8 +11,6 @@ export default class ContributionModal extends React.PureComponent {
   render() {
     const contribId = this.props.data.get('id')
     const contribution = this.props.contributions.find(c => c.id === contribId)
-    return (
-      <ContributionCard contribution={contribution}/>
-    )
+    return <ContributionCard contribution={contribution}/>
   }
 }
