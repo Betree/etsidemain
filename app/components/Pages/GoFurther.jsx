@@ -20,7 +20,7 @@ const GoFurther = () =>
           <Icon name="map-marker"/>&nbsp;
           <span>Se rencontrer</span>
         </h2>
-        <p>Rejoignez un débat organisé par une association prêt de chez vous</p>
+        <p>Rejoignez un débat organisé par une association près de chez vous</p>
         <br/>
         <button className="button is-large">Go !</button>
       </div>
