@@ -15,7 +15,7 @@ export default [
       'label': 'data(Title)',
       'transition-property': 'padding',
       'transition-duration': '0.15s',
-      'font-family': '"Amatic SC", cursive',
+      'font-family': '"Open Sans Condensed", cursive',
     }
   },
   {
@@ -37,8 +37,8 @@ export default [
       shape: 'cutrectangle',
       width: 'label',
       padding: 25,
-      'text-wrap': 'wrap'
-      // 'font-family': 'Fredericka the Great'
+      'text-wrap': 'wrap',
+      'font-family': 'Bebas'
     }
   },
   {

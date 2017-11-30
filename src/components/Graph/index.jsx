@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from 'react-redux'
-import { ReactCytoscape } from 'react-cytoscape'
 
 import graphStyle from './style'
 import graphLayout from './layout'
@@ -16,11 +15,20 @@ export default class Graph extends React.PureComponent {
     super(props)
     this.cy = null
     this.activeNodes = null
+    this.state = {ReactCytoscape: null}
+  }
+  
+  componentDidMount() {
+    // Import graph lib only on client (no server-side rendering)
+    const {ReactCytoscape} = require('react-cytoscape')
+    this.setState({ReactCytoscape: ReactCytoscape})
   }
 
   render() {
+    if (!this.state.ReactCytoscape)
+      return null
     return (
-      <ReactCytoscape
+      <this.state.ReactCytoscape
         cyRef={cy => this.initCy(cy)}
         elements={prepareData(this.props.categories, this.props.contributions)}
         cytoscapeOptions={graphOptions}
