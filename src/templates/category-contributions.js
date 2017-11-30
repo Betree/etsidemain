@@ -8,6 +8,14 @@ import AnimationFactCard from '../components/Animations/AnimationFactCard'
 
 
 export default class CategoryContributions extends React.PureComponent {
+  constructor(props) {
+    props.pathContext.contributions = props.pathContext.contributions.map(c => {
+      c.SpeakerPicture = require(`../assets/speakers/${c.id}.jpg`)
+      return c
+    })
+    super(props)
+  }
+
   render() {
     const category = this.props.pathContext.category
     const contributions = new List(this.props.pathContext.contributions)

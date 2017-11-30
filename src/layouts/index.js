@@ -9,20 +9,8 @@ import Modal from '../components/Modal'
 
 import '../styles/main.sass'
 
-import { fetchData, fetchFacts } from '../state/debate/effects'
 
-
-@connect(
-  state => ({isLoading: state.Debate.isLoadingFacts || state.Debate.isLoadingContributions}),
-  {fetchData, fetchFacts}
-)
 class TemplateWrapper extends React.PureComponent {
-  componentDidMount() {
-    // TODO This should not append here. Move that to GraphQL and query from components
-    //this.props.fetchData()
-    this.props.fetchFacts()
-  }
-
   render() {
     return (
       <div>

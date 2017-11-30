@@ -10,6 +10,10 @@ import { default as ContributionCard } from '../components/Contribution/Card'
 
 export default class RandomContribution extends React.PureComponent {
   constructor(props) {
+    props.data.dataJson.Contributions = props.data.dataJson.Contributions.map(c => {
+      c.SpeakerPicture = require(`../assets/speakers/${c.id}.jpg`)
+      return c
+    })
     super(props)
     this.getRandomContrib = this.getRandomContrib.bind(this)
     this.state = {notSeenContribsIdx: this.randomContribsIndexes(props)}

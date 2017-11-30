@@ -6,12 +6,10 @@ import thunk from 'redux-thunk'
 
 // Reducers
 import ModalReducer from './modal/reducer'
-import DebateReducer from './debate/reducer'
 
 // Declare reducers
 const reducers = combineReducers({
-  Modal: ModalReducer,
-  Debate: DebateReducer
+  Modal: ModalReducer
 })
 
 
