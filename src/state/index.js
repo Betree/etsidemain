@@ -12,7 +12,6 @@ const reducers = combineReducers({
   Modal: ModalReducer
 })
 
-
 // Declare middlewares
 const middlewares = [thunk, promiseMiddleware]
 
