@@ -4,14 +4,14 @@ import ReactPlayer from 'react-player'
 
 export default class ContributionContent extends React.PureComponent {
   render() {
-    const {content} = this.props.contribution
+    const {Content} = this.props.contribution
 
     // Show video player
-    if (content)
-      return <YoutubeVideo src={content}/>
+    if (Content)
+      return <YoutubeVideo src={Content}/>
 
     // Show text
-    return content
+    return Content
   }
 }
 

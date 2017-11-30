@@ -4,8 +4,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
-import NavBar from './NavBar'
-import Modal from './Modal'
+import NavBar from '../components/NavBar'
+import Modal from '../components/Modal'
 
 import '../styles/main.sass'
 

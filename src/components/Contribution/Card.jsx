@@ -13,28 +13,28 @@ const Card = ({contribution}) => (
     <div className="card-content">
       <div className="media">
         <div className="media-left">
-          <SpeakerPicture picture={contribution.speaker.picture}/>
+          <SpeakerPicture picture={`/img/speakers/${contribution.id}.jpg`}/>
         </div>
         <div className="media-content">
-          <p className="title is-4">{contribution.speaker.firstName} {contribution.speaker.lastName}</p>
-          <p className="subtitle is-6">{contribution.speaker.occupation}</p>
+          <p className="title is-4">{contribution.FirstName} {contribution.LastName}</p>
+          <p className="subtitle is-6">{contribution.Occupation}</p>
         </div>
       </div>
       <div className="content">
-        <h5 className="title is-5 has-text-centered is-marginless">“ {contribution.label} ”</h5>
+        <h5 className="title is-5 has-text-centered is-marginless">“ {contribution.Title} ”</h5>
       </div>
       <ContributionContent contribution={contribution}/>
       <div className="facts">
         <div className="columns is-gapless">
-          {contribution.confirm && <div className="column">
-            <FactConfirm message={contribution.confirm}/>
+          {contribution.Confirm && <div className="column">
+            <FactConfirm message={contribution.Confirm}/>
           </div>}
-          {contribution.confirm && contribution.refute && <div className="column separator"/> }
-          {contribution.refute && <div className="column">
-            <FactRefute message={contribution.refute}/>
+          {contribution.Confirm && contribution.Refute && <div className="column separator"/> }
+          {contribution.Refute && <div className="column">
+            <FactRefute message={contribution.Refute}/>
           </div>}
         </div>
-        <FactInfo message={contribution.info}/>
+        <FactInfo message={contribution.Info}/>
       </div>
     </div>
     <ButtonsAction className="card-footer" buttonClassName="card-footer-item" size="medium" order={BUTTONS_ORDER}/>
