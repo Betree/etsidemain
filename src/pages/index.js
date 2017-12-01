@@ -26,18 +26,21 @@ export default class Home extends React.PureComponent {
   }
 }
 
-const PopupContent = connect(null, {closeModal})(({closeModal}) =>
-  <div className="modal-card start-visit-popup-card">
+const PopupContent = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 800
+  return (
+    <div className="modal-card start-visit-popup-card">
     <section className="modal-card-body">
       <h2 className="has-text-centered title is-4">Je m'informe...</h2>
       <div className="columns">
         <Button onClick={closeModal} url="/categories" iconName="tags" label="Par catégorie"/>
         <Button onClick={closeModal} url="/au-hasard" iconName="random" label="Au hasard"/>
-        <Button onClick={closeModal} url="/carte" iconName="line-chart" label="En mode expert"/>
+        {isMobile === false && <Button onClick={closeModal} url="/carte" iconName="line-chart" label="En mode expert"/>}
       </div>
     </section>
   </div>
-)
+  )
+}
 
 const Button = ({label, iconName, url, onClick}) =>
   <p className="control column has-text-centered">
