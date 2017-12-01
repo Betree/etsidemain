@@ -8,6 +8,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
     "font-awesome": "^4.7.0",
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
+    "gatsby-plugin-nprogress": "^1.0.8",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.14",
     "gatsby-source-filesystem": "^1.5.9",

@@ -12,6 +12,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    `gatsby-plugin-nprogress`,
     `gatsby-transformer-json`
   ],
 }
