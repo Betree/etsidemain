@@ -1,25 +1,23 @@
 import React from 'react'
+import Link from 'gatsby-link'
+
 import Icon from '../Utils/Icon'
 
 
-const Button = ({children, size, iconName, className}) =>
-  <a className={`button is-${size} ${className}`}>
-    <Icon name={iconName} size={size}/>
-    <span>{children}</span>
-  </a>
+// TODO set replyingTo when replying
 
-const ButtonsAction = ({size="large", order=[0,1,2], className="", buttonClassName=""}) => {
-  const buttons = [
-    <Button className={buttonClassName} iconName="reply" size={size}>Répondre</Button>,
-    <Button className={buttonClassName} iconName="eye" size={size}>Voir les réponses</Button>,
-    <Button className={buttonClassName} iconName="share-alt" size={size}>Partager</Button>
-  ]
+const ButtonsAction = ({size="large", className="", buttonClassName=""}) => {
   return (
     <div className={className}>
       <div className="columns is-multiline is-gapless is-mobile">
-        <div className="column">{buttons[order[0]]}</div>
-        <div className="column">{buttons[order[1]]}</div>
-        <div className="column">{buttons[order[2]]}</div>
+        <Link to="/participer" className={`button is-${size} ${buttonClassName}`}>
+          <Icon name="reply" size={size}/>
+          <span>Répondre</span>
+        </Link>
+        <a className={`button is-${size} ${buttonClassName}`}>
+          <Icon name="share-alt" size={size}/>
+          <span>Partager</span>
+        </a>
       </div>
     </div>
   )

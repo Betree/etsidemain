@@ -26,10 +26,10 @@ export default class CategoryContributions extends React.PureComponent {
         <section className="hero is-light">
           <div className="hero-body">
             <div className="container">
-              <div className="button is-large" disabled>
+              <Link to="/participer" className="button is-large">
                 <Icon name="plus"/>
                 <span>Participer</span>
-              </div>
+              </Link>
               <h1 className="title">
                 {category}
               </h1>
