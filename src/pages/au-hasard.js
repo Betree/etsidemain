@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 import { List } from 'immutable'
 
 import Message from '../components/Utils/Message'
@@ -21,6 +22,9 @@ export default class RandomContribution extends React.PureComponent {
   render() {
     return (
       <div className="container page-random-contribution">
+        <Helmet>
+          <meta property="og:description" content="Awa ?? Une idée au hasard sur le futur du caillou !"/>
+        </Helmet>
         {this.renderRandomButton()}
         {this.renderContribution()}
         {this.renderRandomButton()}

@@ -16,12 +16,10 @@ export default class Participate extends React.PureComponent {
           <div className="content is-size-5"><Rules/></div>
           <hr/>
           {/* TODO <ContributionForm/>*/}
-          <Message status="info" header="Pour envoyer vos vidéos" className="is-size-5">
-            Le formulaire pour pouvoir vous filmer et envoyer vos vidéos directement depuis
-            cette page arrive bientôt. En attendant vous pouvez nous les envoyer:
+          <Message status="info" header="Pour envoyer vos vidéos" className="is-size-4">
             <ul style={{listStyle: 'inside'}}>
               <li>
-                Par <a className="has-text-weight-bold" target="_BLANK" href="https://www.facebook.com/pg/Et-si-demain-933594156792342">Facebook</a>
+                Par message privé sur <a className="has-text-weight-bold" target="_BLANK" href="https://www.facebook.com/pg/Et-si-demain-933594156792342">Facebook</a>
               </li>
               <li>
                 Par email sur <a className="has-text-weight-bold" href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a>

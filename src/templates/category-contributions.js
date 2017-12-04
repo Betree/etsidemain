@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { List } from 'immutable'
+import Helmet from 'react-helmet'
 
 import { default as ContributionCard } from '../components/Contribution/Card'
 import Icon from '../components/Utils/Icon'
@@ -23,6 +24,9 @@ export default class CategoryContributions extends React.PureComponent {
 
     return (
       <div className="page-category-contributions">
+        <Helmet>
+          <meta property="og:description" content={`Les contributions de la catégorie "${category}"`}/>
+        </Helmet>
         <section className="hero is-light">
           <div className="hero-body">
             <div className="container">

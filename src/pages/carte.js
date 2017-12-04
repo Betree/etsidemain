@@ -1,4 +1,6 @@
 import React from 'react'
+import Helmet from 'react-helmet'
+
 import Graph from '../components/Graph'
 
 
@@ -7,7 +9,14 @@ const Carte = ({data: {dataJson: {Categories, Contributions}}}) => {
     c.SpeakerPicture = require(`../assets/speakers/${c.id}.jpg`)
     return c
   })
-  return <Graph categories={Categories} contributions={Contributions}/>
+  return (
+    <div>
+      <Helmet>
+        <meta property="og:description" content="La carte du débat pour 2018"/>
+      </Helmet>
+      <Graph categories={Categories} contributions={Contributions}/>
+    </div>
+  )
 }
 
 

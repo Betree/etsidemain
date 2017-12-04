@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import Icon from '../components/Utils/Icon'
 import Rules from '../components/Contribution/Rules'
@@ -6,6 +7,9 @@ import Rules from '../components/Contribution/Rules'
 
 const Conditions = () =>
   <div className="container is-size-5" style={{paddingTop: '1em'}}>
+    <Helmet>
+      <meta property="og:description" content="Règles de participation et conditions d'utilisation"/>
+    </Helmet>
     <div className="content box">
       <h1>Règles</h1>
       <Rules/>
