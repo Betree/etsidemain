@@ -1,11 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import { connect } from 'react-redux'
 
 import NavBar from '../components/NavBar'
-import Modal from '../components/Modal'
 
 import '../styles/main.sass'
 
@@ -24,7 +21,6 @@ class TemplateWrapper extends React.PureComponent {
           <meta name="msapplication-config" content="/favicons/browserconfig.xml"/>
           <meta name="theme-color" content="#4497AE"/>
         </Helmet>
-        <Modal/>
         <NavBar />
         {this.props.children()}
       </div>

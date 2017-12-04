@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 
 
-const Message = ({header=null, body, status="", className=""}) =>
+const Message = ({header=null, children, status="", className=""}) =>
   <article className={classNames('message', className, {[`is-${status}`]: !!status})}>
     {header !== null &&
       <div className="message-header">
@@ -10,7 +10,7 @@ const Message = ({header=null, body, status="", className=""}) =>
       </div>
     }
     <div className="message-body">
-      {body}
+      {children}
     </div>
   </article>
 

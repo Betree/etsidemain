@@ -2,6 +2,8 @@
   padding: 3em
   +mobile
     padding: 2em 0 0 0
+    .container.box
+      border-radius: 0
   .title
     font-family: 'Bebas'
     font-weight: bold
@@ -24,8 +26,11 @@
     @media(max-width: 380px)
       font-size: 1em
   .column.separator
-    +tablet
-      padding-top: 3em
+    vertical-align: text-bottom
+    padding-top: 3.25em
+    +mobile
+      padding: 0.75rem 0.75rem 0 0.75rem
+      
   .checkbox
     display: block
   .btn-send

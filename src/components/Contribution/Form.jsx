@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 import classNames from 'classnames'
 
 import Icon from '../Utils/Icon'
@@ -6,6 +7,10 @@ import Icon from '../Utils/Icon'
 
 const TYPE_FILE_UPLOAD = 'file_upload'
 const TYPE_RECORD = 'record'
+
+
+
+// TODO Use https://react-form.js.org/#/basic-form
 
 
 export default class ContributionForm extends React.PureComponent {
@@ -16,33 +21,29 @@ export default class ContributionForm extends React.PureComponent {
 
   render() {
     return (
-      <div className="container box">
+      <div className="contribution-form">
         <h3 className="title is-3">Contact</h3>
         {this.renderNameField()}
         <div className="columns">
           <div className="column is-5">
             <div className="field">
               <label className="label">Email</label>
-              <div className="control has-icons-left">
+              <p className="control has-icons-left has-icons-right">
                 <input className="input" type="text" placeholder="adresse@cagou.nc"/>
-                <span className="icon is-small is-left">
-                  <Icon name="envelope"/>
-                </span>
-              </div>
+                <Icon name="envelope" size="small" className="is-left"/>
+              </p>
             </div>
           </div>
           <div className="column is-2 has-text-centered separator">
-            <h4 className="title is-4">OU</h4>
+            <h4 className="title is-4">Et / Ou</h4>
           </div>
           <div className="column is-5">
             <div className="field">
               <label className="label">Téléphone</label>
-              <div className="control has-icons-left">
+              <p className="control has-icons-left has-icons-right">
                 <input className="input" type="text" placeholder="00.00.00"/>
-                <span className="icon is-small is-left">
-                  <Icon name="phone"/>
-                </span>
-              </div>
+                <Icon name="phone" size="small" className="is-left"/>
+              </p>
             </div>
           </div>
         </div>
@@ -52,7 +53,7 @@ export default class ContributionForm extends React.PureComponent {
         <hr/>
         <div>
           <label className="checkbox is-size-5 box terms">
-            <input type="checkbox"/> J'accepte <a href="#">les conditions de participation</a>
+            <input type="checkbox"/> J'accepte <Link to="/conditions" target="_BLANK">les règles et conditions de participation</Link>
           </label>
           <button className="button is-large btn-send" disabled>
             <Icon name="paper-plane-o"/>
@@ -68,19 +69,15 @@ export default class ContributionForm extends React.PureComponent {
       <div className="field is-horizontal">
         <div className="field-body">
           <div className="field">
-            <p className="control has-icons-left">
+            <p className="control has-icons-left has-icons-right">
               <input className="input" type="text" placeholder="Prénom" required/>
-              <span className="icon is-small is-left">
-                <Icon name="user"/>
-              </span>
+              <Icon name="user" size="small" className="is-left"/>
             </p>
           </div>
           <div className="field">
-            <p className="control has-icons-left">
+            <p className="control has-icons-left has-icons-right">
               <input className="input" type="email" placeholder="Nom"/>
-              <span className="icon is-small is-left">
-                <Icon name="user"/>
-              </span>
+              <Icon name="user" size="small" className="is-left"/>
             </p>
           </div>
         </div>
@@ -122,7 +119,7 @@ export default class ContributionForm extends React.PureComponent {
                 <Icon name="upload"/>
               </span>
               <span className="file-label">
-                Fichier vidéo (.mp4, .avi, .webm...)
+                Fichier vidéo (.mp4, .avi, .webm)
               </span>
             </span>
             {/*<span className="file-name"></span>*/}
