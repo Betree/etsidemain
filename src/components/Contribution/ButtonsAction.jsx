@@ -32,7 +32,7 @@ export default class ButtonsAction extends React.PureComponent {
                    title={<div><Icon name="share-alt"/><span> &nbsp;Partager</span></div>}>
               <Share message={`${contribution.FirstName} ${contribution.LastName} - "${contribution.Title}"`}
                      hashTags={['EtSiDemain', 'NouvelleCalédonie', '2018']}
-                     url={`https://etsidemain.nc/contributions/${contribution.id}`}/>
+                     url={`https://etsidemain.nc/contribution/${contribution.id}`}/>
             </Modal>
           }
         </div>
