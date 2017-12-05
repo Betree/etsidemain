@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { connect } from 'react-redux'
+import Helmet from 'react-helmet'
 import { List } from 'immutable'
 
 import Message from '../components/Utils/Message'
@@ -22,6 +22,9 @@ export default class RandomContribution extends React.PureComponent {
   render() {
     return (
       <div className="container page-random-contribution">
+        <Helmet>
+          <meta property="og:description" content="Une idée au hasard sur le futur du caillou !"/>
+        </Helmet>
         {this.renderRandomButton()}
         {this.renderContribution()}
         {this.renderRandomButton()}
@@ -42,18 +45,14 @@ export default class RandomContribution extends React.PureComponent {
     const idx = this.state.notSeenContribsIdx.last()
     if (idx === undefined)
       return (
-        <Message className="is-large is-success"
-                 header={<div><Icon name="trophy"/><span> &nbsp;Vous êtes fantastique!</span></div>}
-                 body={
-                   <p>
-                     <strong>Bravo !</strong> Vous avez regardé toutes les contributions disponnibles.
-                     Envie d'aller + loin ? <Link to="/aller-plus-loin">Interpellez vos élus ou rejoignez
-                     un débat</Link> organisé par une association prêt de chez vous.
-                     <br/><br/>
-                     Vous pouvez aussi cliquer sur <a onClick={() => this.getRandomContrib()}>Un autre !</a> pour
-                     relancer le mode aléatoire.
-                   </p>
-                 }/>
+        <Message className="is-large is-success" header={<div><Icon name="trophy"/><span> &nbsp;Vous êtes fantastique!</span></div>}>
+          <strong>Bravo !</strong> Vous avez regardé toutes les contributions disponnibles.<br/>
+          Envie d'aller + loin ? <Link to="/aller-plus-loin">Interpellez vos élus ou rejoignez
+          un débat</Link> organisé par une association prêt de chez vous.
+          <br/><br/>
+          Vous pouvez aussi cliquer sur <a onClick={() => this.getRandomContrib()}>Un autre !</a> pour
+          relancer le mode aléatoire.
+        </Message>
       )
     return <ContributionCard contribution={this.props.data.dataJson.Contributions[idx]}/>
   }

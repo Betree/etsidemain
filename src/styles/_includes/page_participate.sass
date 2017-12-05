@@ -1,0 +1,40 @@
+.page-participate
+  padding: 3em
+  +mobile
+    padding: 2em 0 0 0
+    .container.box
+      border-radius: 0
+  .title
+    font-family: 'Bebas'
+    font-weight: bold
+    &.is-1
+      text-shadow: 0px 0px 1px $grey-dark
+      font-size: 5em
+      color: white
+    &.is-2
+      @extend .box
+      background: $red-invert
+      color: $red
+  .tabs
+    +mobile
+      font-size: 1.25em
+      a
+        padding: 0.5em 0em
+    @media(max-width: 440px)
+      .icon
+        display: none
+    @media(max-width: 380px)
+      font-size: 1em
+  .column.separator
+    vertical-align: text-bottom
+    padding-top: 3.25em
+    +mobile
+      padding: 0.75rem 0.75rem 0 0.75rem
+      
+  .checkbox
+    display: block
+  .btn-send
+    width: 100%
+    font-size: 2em
+  .container
+    max-width: 865px

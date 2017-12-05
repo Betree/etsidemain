@@ -8,9 +8,11 @@ import Icon from '../Utils/Icon'
 const Fact = ({message, status, header}) => {
   if (!message)
     return null
-  return <Message status={status} header={header} body={
-    <Markdown source={message} renderers={{link: linkRenderer}}/>
-  }/>
+  return (
+    <Message status={status} header={header}>
+      <Markdown source={message} renderers={{link: linkRenderer}}/>
+    </Message>
+  )
 }
 
 const linkRenderer = props =>

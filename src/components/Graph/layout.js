@@ -1,6 +1,5 @@
 export default {
   name: 'cola',
-  refresh: 3,
   animate: true,
   infinite: true,
   fit: false,

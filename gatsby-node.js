@@ -58,13 +58,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         result.data.dataJson.Categories.forEach(category => {
           // TODO Contributions should be extracted using GraphQL but a strange issue prevent it
           // See https://github.com/gatsbyjs/gatsby/issues/2430
-          const contributionCategories = []
+          const categoryContributions = []
           result.data.dataJson.Contributions.forEach(contrib => {
             if (contrib.Category1 === category)
-              contributionCategories.push(contrib)
+              categoryContributions.push(contrib)
           })
 
-          // Get facts
+          // Get facts and facts pages
           const facts = {}
           const categoryFactsResources = factsResourcesByCategory.get(category)
 
@@ -74,10 +74,20 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               if (!facts[key])
               facts[key] = {}
 
+              facts[key]['name'] = file.name
               if (file.extension === "jpg")
                 facts[key]['image'] = file.base
               else if (file.extension === "mp4")
                 facts[key]['video'] = file.base
+
+              createPage({
+                path: `/info/${file.name}`,
+                component: path.resolve('./src/templates/info.js'),
+                context: {
+                  category: category,
+                  fact: facts[key]
+                }
+              })
             })
 
           // Create categories pages
@@ -88,9 +98,21 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             context: {
               slug: slug,
               category: category,
-              contributions: contributionCategories,
+              contributions: categoryContributions,
               facts: Immutable.fromJS(facts).toList().toJS()
             }
+          })
+
+          // Create contributions pages
+          categoryContributions.forEach(contrib => {
+            createPage({
+              path: `/contribution/${contrib.id}`,
+              component: path.resolve('./src/templates/contribution.js'),
+              context: {
+                category: category,
+                contribution: contrib
+              }
+            })
           })
         });
       })

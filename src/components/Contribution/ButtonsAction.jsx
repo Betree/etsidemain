@@ -1,28 +1,42 @@
 import React from 'react'
+import Link from 'gatsby-link'
+
+import Modal from '../Modal'
 import Icon from '../Utils/Icon'
+import Share from '../Utils/Share'
 
 
-const Button = ({children, size, iconName, className}) =>
-  <a className={`button is-${size} ${className}`}>
-    <Icon name={iconName} size={size}/>
-    <span>{children}</span>
-  </a>
+// TODO set replyingTo when replying
 
-const ButtonsAction = ({size="large", order=[0,1,2], className="", buttonClassName=""}) => {
-  const buttons = [
-    <Button className={buttonClassName} iconName="reply" size={size}>Répondre</Button>,
-    <Button className={buttonClassName} iconName="eye" size={size}>Voir les réponses</Button>,
-    <Button className={buttonClassName} iconName="share-alt" size={size}>Partager</Button>
-  ]
-  return (
-    <div className={className}>
-      <div className="columns is-multiline is-gapless is-mobile">
-        <div className="column">{buttons[order[0]]}</div>
-        <div className="column">{buttons[order[1]]}</div>
-        <div className="column">{buttons[order[2]]}</div>
+export default class ButtonsAction extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {isSharing: false}
+  }
+
+  render() {
+    const {size="large", className="", buttonClassName="", contribution} = this.props
+    return (
+      <div className={className}>
+        <div className="columns is-multiline is-gapless is-mobile">
+          <Link to="/participer" className={`button is-${size} ${buttonClassName}`}>
+            <Icon name="reply" size={size}/>
+            <span>Répondre</span>
+          </Link>
+          <a className={`button is-${size} ${buttonClassName}`} onClick={() => this.setState({isSharing: true})}>
+            <Icon name="share-alt" size={size}/>
+            <span>Partager</span>
+          </a>
+          {this.state.isSharing === true &&
+            <Modal onClose={() => this.setState({isSharing: false})} display="card"
+                   title={<div><Icon name="share-alt"/><span> &nbsp;Partager</span></div>}>
+              <Share message={`${contribution.FirstName} ${contribution.LastName} - "${contribution.Title}"`}
+                     hashTags={['EtSiDemain', 'NouvelleCalédonie', '2018']}
+                     url={`https://etsidemain.nc/contributions/${contribution.id}`}/>
+            </Modal>
+          }
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
-
-export default ButtonsAction
