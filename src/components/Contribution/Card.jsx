@@ -35,7 +35,7 @@ const Card = ({contribution}) => (
         <FactInfo message={contribution.Info}/>
       </div>
     </div>
-    <ButtonsAction className="card-footer" buttonClassName="card-footer-item" size="medium"/>
+    <ButtonsAction className="card-footer" buttonClassName="card-footer-item" size="medium" contribution={contribution}/>
   </div>
 )
 

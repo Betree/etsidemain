@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 
 import { default as ContributionCard } from '../components/Contribution/Card'
 import Icon from '../components/Utils/Icon'
-import AnimationFactCard from '../components/Animations/AnimationFactCard'
+import AnimationFactCard from '../components/Fact/Card'
 
 
 export default class CategoryContributions extends React.PureComponent {
@@ -60,13 +60,8 @@ export default class CategoryContributions extends React.PureComponent {
       return this.emptyCategory()
 
     // Split contributions in two batch (two columns) and mix with animated facts
-    const prepareAnimation = f =>
-      <AnimationFactCard key={f} fact={f} 
-        video={require(`../assets/facts/${category}/${f.video}`)} 
-        image={require(`../assets/facts/${category}/${f.image}`)}
-      />
-    const facts1 = facts.take(Math.floor(facts.size / 2) || 1).map(prepareAnimation)
-    const facts2 = facts.skip(Math.floor(facts.size / 2) || 1).map(prepareAnimation)
+    const facts1 = facts.take(Math.floor(facts.size / 2) || 1).map(f => <AnimationFactCard key={f} category={category} fact={f}/>)
+    const facts2 = facts.skip(Math.floor(facts.size / 2) || 1).map(f => <AnimationFactCard key={f} category={category} fact={f}/>)
     const contribs1 = contributions.take(Math.floor(contributions.size / 2) || 1).map(c => <ContributionCard key={c.id} contribution={c}/>)
     const contribs2 = contributions.skip(Math.floor(contributions.size / 2) || 1).map(c => <ContributionCard key={c.id} contribution={c}/>)
     const firstList = contribs1.zipAll(facts1)

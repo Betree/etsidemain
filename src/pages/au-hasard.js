@@ -23,7 +23,7 @@ export default class RandomContribution extends React.PureComponent {
     return (
       <div className="container page-random-contribution">
         <Helmet>
-          <meta property="og:description" content="Awa ?? Une idée au hasard sur le futur du caillou !"/>
+          <meta property="og:description" content="Une idée au hasard sur le futur du caillou !"/>
         </Helmet>
         {this.renderRandomButton()}
         {this.renderContribution()}
