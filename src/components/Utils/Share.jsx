@@ -12,6 +12,8 @@ export default class Share extends React.PureComponent {
 
   render() {
     const { url, message="", hashTags } = this.props
+    const encodedUrl = encodeURIComponent(url)
+
     return (
       <div className="share">
       <div className="field has-addons">
@@ -28,9 +30,9 @@ export default class Share extends React.PureComponent {
       </div>
       <hr/>
       <div className="has-text-centered">
-        <ShareButton url={twitterLink(url, message, hashTags)} iconName="twitter" title="Twitter"/>
-        <ShareButton url={facebookLink(url, message, hashTags)} iconName="facebook" title="Facebook"/>
-        <ShareButton url={mailLink(url, message, hashTags)} iconName="envelope" title="Mail"/>
+        <ShareButton url={twitterLink(encodedUrl, message, hashTags)} iconName="twitter" title="Twitter"/>
+        <ShareButton url={facebookLink(encodedUrl, message, hashTags)} iconName="facebook" title="Facebook"/>
+        <ShareButton url={mailLink(encodedUrl, message, hashTags)} iconName="envelope" title="Mail"/>
       </div>
     </div>
     )
@@ -56,7 +58,7 @@ function twitterLink(url, message, hashTags) {
 
 function facebookLink(url, message, hashTags) {
   // Doesn't work with localhost
-  return `https://www.facebook.com/dialog/share?display=page&href=${url}&hashtag=${hashTags[0]}&quote=${message}`
+  return `https://www.facebook.com/dialog/share?app_id=166652520772209&display=page&href=${url}&hashtag=${hashTags[0]}&quote=${encodeURI(message)}`
 }
 
 function mailLink(url, message) {

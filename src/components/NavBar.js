@@ -19,7 +19,7 @@ export default class NavBar extends React.Component {
       <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <NavLink exact className="navbar-item" to="/">
-            <img src={logo} width="100"/>
+            <img src={logo} height="40"/>
           </NavLink>
           <button className="button navbar-burger is-dark"
                   onClick={() => this.setState({isActive: !this.state.isActive})}>
