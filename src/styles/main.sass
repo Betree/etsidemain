@@ -6,18 +6,23 @@
 
 // ---- Vendors ----
 
-// Icons / fonts
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome"
-
 // Bulma - Only utilities and base are necessary. Either use @import "bulma/bulma" or uncomment what you need
 @import "~bulma/sass/utilities/initial-variables"
 @import "~bulma/sass/utilities/functions"
 @import "_includes/variables" // Bulma customization
 @import "~bulma/bulma"
 
+// ---- Mixins ----
+@import "_mixins/font_face"
+
+// ---- Fonts ----
+@include font-face(Bebas, '../assets/fonts/bebas_neue/BebasNeue', null, null, eot ttf woff woff2)
+@include font-face(icomoon, '../assets/fonts/icomoon/icomoon', normal, normal, eot ttf woff svg)
+@include font-face('Open Sans Condensed', '../assets/fonts/open_sans/OpenSansCondensed-Light', null, null, eot ttf woff woff2)
+
 // ---- Custom ----
 @import "_includes/app"
+@import "_includes/icons"
 @import "_includes/modal"
 @import "_includes/navbar"
 @import "_includes/contribution_card"

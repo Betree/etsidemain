@@ -16,7 +16,6 @@
   "dependencies": {
     "bulma": "^0.6.1",
     "classnames": "^2.2.5",
-    "font-awesome": "^4.7.0",
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-nprogress": "^1.0.8",

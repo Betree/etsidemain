@@ -8,7 +8,7 @@ export default class Icon extends React.PureComponent {
 
     return (
       <span className={classNames('icon', className, {[`is-${size}`]: !!size})}>
-        <i className={`fa fa-${name}`}/>
+        <i className={`icon-${name}`}/>
       </span>
     )
   }
