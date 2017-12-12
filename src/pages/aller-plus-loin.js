@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import Icon from '../components/Utils/Icon'
 
@@ -22,7 +21,7 @@ const GoFurther = () =>
           <Icon name="map-marker"/>&nbsp;
           <span>Se rencontrer</span>
         </h2>
-        <p>Rejoignez un groupe local pour débatre ou agîr</p>
+        <p>Rejoindre un groupe local pour débattre ou pour agîr</p>
         <br/>
         <button className="button is-large">Go !</button>
       </div>

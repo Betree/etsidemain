@@ -14,7 +14,7 @@ export default class Home extends React.PureComponent {
   render() {
     return (
       <div className="page-home">
-        <ReactPlayer url='https://youtu.be/QHD-5Glqc9U'
+        <ReactPlayer url='https://youtu.be/rMwvVKs7W4k'
                      className="video"
                      onEnded={() => this.onEnded()}
                      config={{youtube: {playerVars: {modestbranding: 1}}
