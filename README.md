@@ -14,4 +14,4 @@ npm start
 ```
 
 Then open [0.0.0.0:8000](http://0.0.0.0:8000).
-You can also access GraphiQL on [0.0.0.0:8000/___graphql](http://0.0.0.0:8000/___graphql).
+You can also access GraphiQL on [0.0.0.0:8000/__graphql](http://0.0.0.0:8000/__graphql).

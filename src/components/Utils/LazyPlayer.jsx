@@ -18,7 +18,7 @@ export default class LazyPlayer extends PureComponent {
     if (!this.state.isLoaded)
       return (
         <div className="lazy-player" onClick={() => this.setState({isLoaded: true})}>
-          <img src={`http://img.youtube.com/vi/${videoId}/sddefault.jpg`}/>
+          <img src={`https://img.youtube.com/vi/${videoId}/sddefault.jpg`}/>
           <Icon name="video"/>
         </div>
       )
