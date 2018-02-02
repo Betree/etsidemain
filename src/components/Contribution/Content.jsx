@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyPlayer from '../Utils/LazyPlayer'
 
 
 export default class ContributionContent extends React.PureComponent {
@@ -7,17 +8,9 @@ export default class ContributionContent extends React.PureComponent {
 
     // Show video player
     if (Content)
-      return <YoutubeVideo src={Content}/>
+      return <LazyPlayer src={Content}/>
 
     // Show text
     return Content
   }
 }
-
-
-const YoutubeVideo = ({src}) =>
-  <div className="video">
-    <div>
-      <iframe src={src.replace('https://youtu.be/', 'https://www.youtube-nocookie.com/embed/') + '?showinfo=0&hl=fr&fs=0'}/>
-    </div>
-  </div>
