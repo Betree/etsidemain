@@ -2,8 +2,8 @@ import React from 'react'
 import classNames from 'classnames'
 
 
-const Message = ({header=null, children, status="", className=""}) =>
-  <article className={classNames('message', className, {[`is-${status}`]: !!status})}>
+const Message = ({header=null, children, status="", className="", ...props}) =>
+  <article className={classNames('message', className, {[`is-${status}`]: !!status})} {...props}>
     {header !== null &&
       <div className="message-header">
         <div>{header}</div>

@@ -13,12 +13,22 @@
       color: $red
   .column
     border-top: 5px dashed white
-    padding-top: 3em
+    padding: 3em 0.75em
     margin-top: 2em
-    p
-      font-size: 2em
-      max-width: 400px
+    +tablet-only
       margin: 0 auto
-      color: $white
-      .icon
-        color: $red
+    +mobile
+      padding: 3em 0em
+    .panel
+      background: $white-bis
+    .panel-block:hover
+      @extend .panel-block.is-active
+    .panel-tabs
+      font-size: 1.1em
+    //p
+      //font-size: 2em
+      //max-width: 400px
+      //margin: 0 auto
+      //color: $white
+      //.icon
+      //  color: $red

@@ -16,7 +16,7 @@ const Conditions = () =>
       <h1>Légal</h1>
       <p>
         Vous soumettez vos vidéos sous une licence&nbsp;
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>,
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>,
         qui permet à des professeurs ou à des associations de réexploiter librement le contenu envoyé.
         <br/><br/>
         Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée, vous disposez d’un droit d’accès 

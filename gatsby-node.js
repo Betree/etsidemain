@@ -47,17 +47,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           }
         `
       ).then(result => {
-        if (result.errors) {
+        if (result.errors)
           reject(result.errors)
-        }
         const factFileCategoryRegex = /assets\/facts\/(.+)\/.+$/
-        const factsResourcesByCategory = Immutable.List(result.data.factsResources.edges).map(e => e.node).groupBy(e => 
-          factFileCategoryRegex.exec(e.relativePath)[1]
-        )
+        const factsResourcesByCategory = Immutable.List(result.data.factsResources.edges)
+          .map(e => e.node)
+          .groupBy(e => factFileCategoryRegex.exec(e.relativePath)[1])
 
         result.data.dataJson.Categories.forEach(category => {
-          // TODO Contributions should be extracted using GraphQL but a strange issue prevent it
-          // See https://github.com/gatsbyjs/gatsby/issues/2430
           const categoryContributions = []
           result.data.dataJson.Contributions.forEach(contrib => {
             if (contrib.Category1 === category)
@@ -72,7 +69,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             categoryFactsResources.forEach(file => {
               const key = `fact-${file.name}`
               if (!facts[key])
-              facts[key] = {}
+                facts[key] = {}
 
               facts[key]['name'] = file.name
               if (file.extension === "jpg")

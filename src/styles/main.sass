@@ -27,6 +27,7 @@
 @import "~bulma/sass/components/media"
 @import "~bulma/sass/components/card"
 @import "~bulma/sass/components/message"
+@import "~bulma/sass/components/panel"
 @import "~bulma/sass/grid/columns"
 @import "~bulma/sass/layout/hero"
 @import "~bulma/sass/layout/section"
@@ -35,13 +36,14 @@
 @import "_mixins/font_face"
 
 // ---- Fonts ----
-@include font-face(Bebas, '../assets/fonts/bebas_neue/BebasNeue', null, null, eot ttf woff woff2)
-@include font-face(icomoon, '../assets/fonts/icomoon/icomoon', normal, normal, eot ttf woff woff2 svg)
-@include font-face('Open Sans Condensed', '../assets/fonts/open_sans/OpenSansCondensed-Light', null, null, eot ttf woff woff2)
+@include font-face(Bebas, '../assets/fonts/bebas_neue/BebasNeue', null, null, eot woff2 woff ttf)
+@include font-face(icomoon, '../assets/fonts/icomoon/icomoon', normal, normal, eot woff2 woff ttf svg)
+@include font-face('Open Sans Condensed', '../assets/fonts/open_sans/OpenSansCondensed-Light', null, null, eot woff2 woff ttf)
 
 // ---- Custom ----
 @import "_includes/app"
 @import "_includes/icons"
+@import "_includes/icons_list"
 @import "_includes/modal"
 @import "_includes/navbar"
 @import "_includes/contribution_card"

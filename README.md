@@ -5,3 +5,13 @@ et les reflexions initiales autour du projet.
 
 Un grand merci à l'observatoire du numérique et à toute l'équipe organisatrice du Hackathon de Nouméa sans lesquels ce
 projet n'aurait peut être jamais vu le jour.
+
+# Developing
+
+```bash
+npm install
+npm start
+```
+
+Then open [0.0.0.0:8000](http://0.0.0.0:8000).
+You can also access GraphiQL on [0.0.0.0:8000/___graphql](http://0.0.0.0:8000/___graphql).

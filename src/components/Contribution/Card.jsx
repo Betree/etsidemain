@@ -11,7 +11,8 @@ const Card = ({contribution}) => (
     <div className="card-content">
       <div className="media">
         <div className="media-left">
-          <SpeakerPicture picture={contribution.SpeakerPicture}/>
+          <SpeakerPicture picture={contribution.SpeakerPicture}
+                          firstName={contribution.FirstName} lastName={contribution.LastName}/>
         </div>
         <div className="media-content">
           <p className="title is-4">{contribution.FirstName} {contribution.LastName}</p>
