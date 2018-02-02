@@ -44,10 +44,7 @@ export const pageQuery = graphql`
         URL
         Type
       }
-      ResourcesTypes {
-        Title
-        Icon
-      }
+      ResourcesTypes
     }
   }
 `;

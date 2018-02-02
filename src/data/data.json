@@ -7,9 +7,12 @@
       "Title": "La Nouvelle-Calédonie n'est pas indépendante financièrement",
       "Content": "https://youtu.be/2elBmLhFEo0",
       "Category1": "Économie",
+      "Category2": "",
       "Confirm": "Les dépenses de l’État en Nouvelle-Calédonie s’élèvent en 2015 à **153,1 milliards de francs**, soit 17,3 % du PIB de la Nouvelle-Calédonie. http://www.ieom.fr/IMG/pdf/ra_2015_ieom_nc.pdf",
       "Refute": "- 63,1 % des dépenses de l'Etat en Nouvelle-Calédonie sont consacrés aux **salaires et pensions des fonctionnaires** d’État, gendarmes et militaires. http://www.ieom.fr/IMG/pdf/ra_2015_ieom_nc.pdf\n- Sur 1 000 francs de budget global de la Nouvelle-Calédonie, 7 francs proviennent de l'Etat. http://www.isee.nc/economie-entreprises/economie-finances/finances-publiques?highlight=WyJjZW50aW1lcyJd",
-      "Occupation": "Etudiant"
+      "Info": "",
+      "Occupation": "Etudiant",
+      "ReplyTo": ""
     },
     {
       "id": 2,
@@ -18,8 +21,12 @@
       "Title": "Le passeport français est reconnu dans tous les pays du monde",
       "Content": "https://youtu.be/ms3mf5HGnnI",
       "Category1": "Citoyenneté",
+      "Category2": "",
+      "Confirm": "",
+      "Refute": "",
       "Info": "Dans le cas d'une indépendance de la Nouvelle-Calédonie, l'instauration d'une **double nationalité** française et calédonienne pourrait être possible. Ces conditions devront être débattues ou négociées lors de l'élaboration du nouveau statut du pays, à l'issue du référendum.",
-      "Occupation": "\nEtudiant\n"
+      "Occupation": "\nEtudiant\n",
+      "ReplyTo": ""
     },
     {
       "id": 3,
@@ -30,8 +37,10 @@
       "Category1": "Économie",
       "Category2": "Défense",
       "Confirm": "- Les forces armées représentent **1 450 militaires** environ répartis à Nouméa, Plum, Tontouta et Nandaï. http://www.defense.gouv.fr/ema/forces-prepositionnees/nouvelle-caledonie/dossier/les-forces-armees-en-nouvelle-caledonie\n- Depuis le début de l'année 2017, trois opérations de l'armée française ont permis d'intercepter des **Blue boats** (navire vietnamiens) pratiquant une pêche illégale dans les eaux calédoniennes.",
+      "Refute": "",
       "Info": "- En 2015, 87% des produits maritimes consommés en Calédonie étaient issus de la production locale (crevettes, écrevisses, huîtres, thons). http://www.isee.nc/component/phocadownload/category/293-c-consulter-les-donnees-globales-sur-le-secteur-primaire?download=896:le-taux-de-couverture-des-besoins-en-produits-agricoles-ou-d-origine-maritime- \n- La Zone Economique Exclusive (ZEE) calédonienne s'étend sur près de **2 millions de km2**.",
-      "Occupation": "\nEtudiant\n"
+      "Occupation": "\nEtudiant\n",
+      "ReplyTo": ""
     },
     {
       "id": 4,
@@ -40,7 +49,12 @@
       "Title": "Il n'y aura pas de guerre civile",
       "Content": "https://youtu.be/HmF5wvQWLQw",
       "Category1": "Défense",
-      "Occupation": "\nEtudiant\n"
+      "Category2": "",
+      "Confirm": "",
+      "Refute": "",
+      "Info": "",
+      "Occupation": "\nEtudiant\n",
+      "ReplyTo": ""
     },
     {
       "id": 5,
@@ -49,7 +63,12 @@
       "Title": "L'élément déclencheur pour un peuple commun",
       "Content": "https://youtu.be/QFvgDy525zs",
       "Category1": "Citoyenneté",
-      "Occupation": "Etudiante"
+      "Category2": "",
+      "Confirm": "",
+      "Refute": "",
+      "Info": "",
+      "Occupation": "Etudiante",
+      "ReplyTo": ""
     },
     {
       "id": 6,
@@ -58,9 +77,12 @@
       "Title": "On est déjà indépendants sur certaines choses",
       "Content": "https://youtu.be/c2akGL5ypU4",
       "Category1": "Politique",
+      "Category2": "",
       "Confirm": "La Nouvelle-Calédonie est compétente dans certains domaines tels que **les transports, l'économie et le développement, l'enseignement et la recherche** entre autres. Source : http://www.isee.nc/component/phocadownload/category/310-donnees?download=954:repartition-et-echeancier-des-transferts-de-competences-issus-de-la-loi-organique-de-1999",
       "Refute": "Certaines compétences restent du domaine de l'Etat français telles que **la justice ou la défense**. Source : http://www.isee.nc/component/phocadownload/category/310-donnees?download=954:repartition-et-echeancier-des-transferts-de-competences-issus-de-la-loi-organique-de-1999",
-      "Occupation": "Etudiante"
+      "Info": "",
+      "Occupation": "Etudiante",
+      "ReplyTo": ""
     },
     {
       "id": 7,
@@ -69,8 +91,12 @@
       "Title": "Continuer à tenir compte de la revendication indépendantiste",
       "Content": "https://youtu.be/en69w-KASXo",
       "Category1": "Politique",
+      "Category2": "",
       "Confirm": "La déclaration des Nations Unies sur **les droits des peuples autochtones** affirme \"l’importance fondamentale du droit de tous les peuples de disposer d’eux-mêmes, droit en vertu duquel ils déterminent librement leur statut politique et assurent librement leur développement économique, social et culturel\". Source : http://www.un.org/esa/socdev/unpfii/documents/DRIPS_fr.pdf",
-      "Occupation": "Professeur d'histoire"
+      "Refute": "",
+      "Info": "",
+      "Occupation": "Professeur d'histoire",
+      "ReplyTo": ""
     },
     {
       "id": 8,
@@ -79,8 +105,12 @@
       "Title": "Une opportunité pour changer le système",
       "Content": "https://youtu.be/tRTYmynzKSA",
       "Category1": "Social",
+      "Category2": "",
       "Confirm": "- En Nouvelle-Calédonie, **le taux de pauvreté** relatif est 2,4 fois plus élevé qu’en Métropole. http://www.isee.nc/component/phocadownload/category/63-etudes-et-syntheses?download=859:synthese-n-23\n- En Nouvelle-Calédonie, **les plus riches** ont un niveau de vie 7,9 fois supérieur au niveau de vie des plus modestes. http://www.isee.nc/component/phocadownload/category/63-etudes-et-syntheses?download=860:synthese-n-18",
-      "Occupation": "Professeur d'histoire"
+      "Refute": "",
+      "Info": "",
+      "Occupation": "Professeur d'histoire",
+      "ReplyTo": ""
     },
     {
       "id": 9,
@@ -89,7 +119,12 @@
       "Title": "Il n'y a pas de projet qui tienne compte des enjeux d'aujourd'hui",
       "Content": "https://youtu.be/Cz0IN6OYWt0",
       "Category1": "Social",
-      "Occupation": "Professeur d'histoire"
+      "Category2": "",
+      "Confirm": "",
+      "Refute": "",
+      "Info": "",
+      "Occupation": "Professeur d'histoire",
+      "ReplyTo": ""
     },
     {
       "id": 10,
@@ -98,8 +133,12 @@
       "Title": "Que vont devenir les autres communautés ?",
       "Content": "https://youtu.be/hn-aQu2KzXs",
       "Category1": "Citoyenneté",
+      "Category2": "",
+      "Confirm": "",
+      "Refute": "",
       "Info": "L'Accord de Nouméa reconnait à toutes les communautés **une légitimité à vivre en Nouvelle-Calédonie** et à contribuer à son développement. Source : https://www.ac-noumea.nc/IMG/pdf/accordsNoumea.pdf",
-      "Occupation": "Serveuse"
+      "Occupation": "Serveuse",
+      "ReplyTo": ""
     },
     {
       "id": 11,
@@ -108,9 +147,12 @@
       "Title": "Il n'y a pas assez de médecins ou d'avocats calédoniens",
       "Content": "https://youtu.be/aYxJ8tZX6aE",
       "Category1": "Éducation",
+      "Category2": "",
       "Confirm": "En 2014, 938 kanak occupaient un poste de **cadre ou de profession intellectuelle supérieure** contre 7 572 personnes d’origine européenne (parmi la population active occupée de plus de 15 ans). Source : http://www.isee.nc/component/phocadownload/category/278-donnees?download=874:structure-de-la-population-des-communautes-en-2009&highlight=WyJjYXRlZ29yaWUiLCJzb2Npb3Byb2Zlc3Npb25uZWxsZSIsImNhdGVnb3JpZSBzb2Npb3Byb2Zlc3Npb25uZWxsZSJd",
+      "Refute": "",
       "Info": "1584 personnes auraient suivi le programme 400 cadres puis son successeur le programme Cadres avenir en un peu plus de 25 ans. Objectif visé ? **Le rééquilibrage et l’accession des Kanak aux responsabilités**. 56 % des anciens stagiaires travaillent dans le public contre 44 % dans le privé\nSource : https://unc.nc/wp-content/uploads/2017/08/8_bilan_cadres_avenir.pdf",
-      "Occupation": "Serveuse"
+      "Occupation": "Serveuse",
+      "ReplyTo": ""
     },
     {
       "id": 12,
@@ -119,9 +161,12 @@
       "Title": "Production agricole : la Calédonie peut être autosuffisante",
       "Content": "https://youtu.be/Liavgmf1cTA",
       "Category1": "Agriculture",
+      "Category2": "",
+      "Confirm": "",
       "Refute": "Fruits et légumes frais, volaille, viande bovine, œufs, café, etc. **La Nouvelle-Calédonie importe 53% des produits agricoles** consommés.\nSource : http://www.isee.nc/component/phocadownload/category/293-c-consulter-les-donnees-globales-sur-le-secteur-primaire?download=896:le-taux-de-couverture-des-besoins-en-produits-agricoles-ou-d-origine-maritime",
       "Info": "La quasi-totalité des légumes exportés par la Nouvelle-Calédonie est composée par **les squashs**. Plus de 2.400 tonnes sont exportées en moyenne par an vers le Japon et la Nouvelle-Zélande.\n\nSource : http://www.davar.gouv.nc/portal/page/portal/davar/librairie/fichiers/31102252.PDF",
-      "Occupation": "Vendeuse au marché"
+      "Occupation": "Vendeuse au marché",
+      "ReplyTo": ""
     },
     {
       "id": 13,
@@ -130,7 +175,12 @@
       "Title": "Se faire acheter par la Chine",
       "Content": "https://youtu.be/GIQet49R4Pw",
       "Category1": "Économie",
-      "Occupation": "Etudiant"
+      "Category2": "",
+      "Confirm": "",
+      "Refute": "",
+      "Info": "",
+      "Occupation": "Etudiant",
+      "ReplyTo": ""
     }
   ],
   "Categories": [

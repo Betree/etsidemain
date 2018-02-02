@@ -16,7 +16,7 @@
   "dependencies": {
     "bulma": "^0.6.1",
     "classnames": "^2.2.5",
-    "gatsby": "^1.9.177",
+    "gatsby": "1.9.175",
     "gatsby-link": "^1.6.36",
     "gatsby-plugin-nprogress": "^1.0.8",
     "gatsby-plugin-react-helmet": "^2.0.4",
