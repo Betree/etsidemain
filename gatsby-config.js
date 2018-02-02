@@ -13,12 +13,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        minimum: 0.0
-      },
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Et si demain...",
@@ -43,6 +37,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-nprogress`
   ],
 }
