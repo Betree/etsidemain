@@ -12,7 +12,37 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-plugin-nprogress`,
-    `gatsby-transformer-json`
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        minimum: 0.0
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Et si demain...",
+        short_name: "Et si demain...",
+        start_url: "/",
+        background_color: "#4497ae",
+        theme_color: "#f5f5f5",
+        display: "minimal-ui",
+        icons: [
+          {
+            "src": "/favicons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+              "src": "/favicons/android-chrome-512x512.png",
+              "sizes": "512x512",
+              "type": "image/png"
+          }
+        ],
+      },
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-json`,
+    `gatsby-plugin-netlify`
   ],
 }

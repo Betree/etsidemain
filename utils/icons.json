@@ -263,7 +263,7 @@
       },
       "attrs": [],
       "properties": {
-        "name": "twitter-square",
+        "name": "twitter",
         "id": 122,
         "order": 24,
         "prevSize": 28,
@@ -290,7 +290,7 @@
       },
       "attrs": [],
       "properties": {
-        "name": "facebook-square",
+        "name": "facebook",
         "id": 123,
         "order": 23,
         "prevSize": 28,
@@ -539,7 +539,7 @@
         "id": 326,
         "order": 18,
         "prevSize": 28,
-        "code": 128250
+        "code": 9654
       },
       "setIdx": 2,
       "setId": 2,

@@ -1,11 +1,9 @@
 import React, { PureComponent } from 'react'
 import ReactPlayer from 'react-player'
 
+import { youtubeId, youtubeThumbnail } from '../../lib/url_utils'
 import Icon from './Icon'
 
-
-export const youtubeRegex =
-  /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i
 
 export default class LazyPlayer extends PureComponent {
   constructor(props) {
@@ -14,11 +12,11 @@ export default class LazyPlayer extends PureComponent {
   }
 
   render() {
-    const videoId = youtubeRegex.exec(this.props.src)[1]
+    const videoId = youtubeId(this.props.src)
     if (!this.state.isLoaded)
       return (
         <div className="lazy-player" onClick={() => this.setState({isLoaded: true})}>
-          <img src={`https://img.youtube.com/vi/${videoId}/sddefault.jpg`}/>
+          <img src={youtubeThumbnail(videoId)}/>
           <Icon name="video"/>
         </div>
       )

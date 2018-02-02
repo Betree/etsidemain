@@ -14,11 +14,11 @@ export default class Home extends React.PureComponent {
   render() {
     return (
       <div className="page-home">
-        <ReactPlayer url='https://youtu.be/rMwvVKs7W4k'
+        <ReactPlayer url='https://www.youtube.com/watch?v=rMwvVKs7W4k'
                      className="video"
                      width="1920"
                      onEnded={() => this.onEnded()}
-                     config={{youtube: {playerVars: {modestbranding: 1}}}}
+                     config={{youtube: {playerVars: {modestbranding: 1, origin: 'demo.etsidemain.nc'}}}}
                      />
         <Modal display="popup" isActive={this.state.hasModal}>
           <PopupNav/>

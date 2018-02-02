@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
 import { default as ContributionCard } from '../components/Contribution/Card'
+import { youtubeThumbnail, youtubeId } from '../lib/url_utils';
 
 
 export default class ContributionPage extends React.PureComponent {
@@ -18,10 +19,7 @@ export default class ContributionPage extends React.PureComponent {
         {/*TODO Voir les autres arguments de la catégorie...*/}
         <Helmet>
           <meta property="og:description" content={`${contrib.FirstName} ${contrib.LastName} - "${contrib.Title}"`}/>
-          <meta property="og:image" content="/static/banner.jpg"/>
-          <meta property="og:image:type" content="image/jpeg"/>
-          <meta property="og:image:width" content="1200"/>
-          <meta property="og:image:height" content="630"/>
+          {this.getBannerMeta()}
         </Helmet>
         <div className="container">
           <ContributionCard contribution={contrib}/>
@@ -31,13 +29,20 @@ export default class ContributionPage extends React.PureComponent {
   }
 
   getBannerMeta() {
-    const meta = {image: "/static/banner.jpg", type: "image/jpeg", width: "1200", height: "630"}
+    let meta = {image: "/static/banner.jpg", type: "image/jpeg", width: "1200", height: "630"}
     // TODO Get youtube id and if not null fill meta with good params
+    const videoId = youtubeId(this.props.pathContext.contribution.Content)
+    if (videoId) {
+      meta.image = youtubeThumbnail(videoId)
+      meta.width = "640"
+      meta.height = "480"
+    }
+      
     return [
-      <meta property="og:image" content={meta.image}/>,
-      <meta property="og:image:type" content={meta.type}/>,
-      <meta property="og:image:width" content={meta.width}/>,
-      <meta property="og:image:height" content={meta.height}/>
+      <meta key="img" property="og:image" content={meta.image}/>,
+      <meta key="imgType" property="og:image:type" content={meta.type}/>,
+      <meta key="imgWith" property="og:image:width" content={meta.width}/>,
+      <meta key="imgHeight" property="og:image:height" content={meta.height}/>
     ]
   }
 }
