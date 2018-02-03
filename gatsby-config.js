@@ -36,7 +36,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    `gatsby-plugin-netlify`,
+    //`gatsby-plugin-netlify`,
     `gatsby-plugin-nprogress`
   ],
 }
