@@ -1,16 +1,9 @@
 .page-go-further
-  padding: 3em
-  .title
-    font-family: 'Bebas'
-    color: white
-    font-weight: bold
-    &.is-1
-      text-shadow: 0px 0px 1px $grey-dark
-      font-size: 5em
-    &.is-2
-      @extend .box
-      background: $red-invert
-      color: $red
+  @extend .page-standard
+  .title.is-2
+    @extend .box
+    background: $red-invert
+    color: $red
   .column
     border-top: 5px dashed white
     padding: 3em 0.75em
@@ -25,10 +18,3 @@
       @extend .panel-block.is-active
     .panel-tabs
       font-size: 1.1em
-    //p
-      //font-size: 2em
-      //max-width: 400px
-      //margin: 0 auto
-      //color: $white
-      //.icon
-      //  color: $red

@@ -5,6 +5,7 @@ import Meetup from '../components/About/Meetup'
 import Icon from '../components/Utils/Icon'
 import Message from '../components/Utils/Message'
 import ContactFields from '../components/Utils/ContactFields'
+import Form from '../components/Utils/Form'
 
 
 const About = () =>
@@ -34,18 +35,18 @@ const About = () =>
         </p>
       </Message>
       <div className="box">
-        <form className="form" name="contact" data-netlify="true">
-          <h3 className="title is-3">Contact</h3>
-          <ContactFields/>
-          <hr/>
-          <label className="label">Message</label>
-          <textarea className="textarea" placeholder="Merci !" required/>
-          <hr/>
-          <button type="submit" className="button is-large btn-send">
-            <Icon name="send"/>
-            <span>Envoyer</span>
-          </button>
-        </form>
+        <Form name="contact" title="Contact">
+          {formComponents => 
+            <div>
+              <ContactFields formComponents={formComponents}/>
+              <hr/>
+              <label className="label" htmlFor="Message">Message</label>
+              <formComponents.TextArea id="Message" name="Message" placeholder="Merci !" required/>
+              <hr/>
+              <formComponents.Submit/>
+            </div>
+          }
+        </Form>
       </div>
     </div>
   </div>

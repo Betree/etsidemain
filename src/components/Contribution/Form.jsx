@@ -4,6 +4,7 @@ import classNames from 'classnames'
 
 import Icon from '../Utils/Icon'
 import ContactFields from '../Utils/ContactFields'
+import Form from '../Utils/Form'
 
 
 const TYPE_FILE_UPLOAD = 'file_upload'
@@ -14,6 +15,44 @@ const TYPE_RECORD = 'record'
 export default class ContributionForm extends React.PureComponent {
   render() {
     return (
+      <Form name="contribution" title="Envoi d'une vidéo">
+        {formComponents =>
+          <React.Fragment>
+            <ContactFields formComponents={formComponents}/>
+            <hr/>
+            <div className="field">
+              <div className="file has-name is-boxed">
+                <label className="file-label">
+                  <label className="label" htmlFor="video-file">Fichier vidéo</label>
+                  <formComponents.Input className="file-input" accept="video/*" type="file" name="video" required/>
+                  <span className="file-cta">
+                    <span className="file-icon">
+                      <Icon name="upload"/>
+                    </span>
+                    <span className="file-label">
+                      Formats: mp4, webm, 3gp, mpeg, avi...
+                    </span>
+                  </span>
+                  {/*<span className="file-name"></span>*/}
+                </label>
+              </div>
+            </div>
+            <hr/>
+            <label className="checkbox is-size-5 box terms">
+              <formComponents.Input type="checkbox"/>&nbsp;
+              J'accepte <Link to="/conditions" target="_BLANK">les règles et conditions de participation</Link>
+            </label>
+            <formComponents.Submit/>
+          </React.Fragment>
+        }
+      </Form>
+    )
+  }
+}
+
+
+/*
+
       <form className="form" name="contribution" data-netlify="true">
         <h3 className="title is-3">Envoi d'une vidéo</h3>
         <ContactFields/>
@@ -21,7 +60,7 @@ export default class ContributionForm extends React.PureComponent {
         <div className="field">
           <div className="file has-name is-boxed">
             <label className="file-label">
-              <label className="label" for="video-file">Fichier vidéo</label>
+              <label className="label" htmlFor="video-file">Fichier vidéo</label>
               <input className="file-input" name="video" id="video-file" accept="video/*" type="file" name="video" required/>
               <span className="file-cta">
                 <span className="file-icon">
@@ -31,19 +70,11 @@ export default class ContributionForm extends React.PureComponent {
                   Formats: mp4, webm, 3gp, mpeg, avi...
                 </span>
               </span>
-              {/*<span className="file-name"></span>*/}
-            </label>
-          </div>
-        </div>
-        <hr/>
-        <label className="checkbox is-size-5 box terms">
-          <input type="checkbox"/> J'accepte <Link to="/conditions" target="_BLANK">les règles et conditions de participation</Link>
-        </label>
-        <button type="submit" className="button is-large btn-send">
-          <Icon name="send"/>
-          <span>Envoyer</span>
-        </button>
-      </form>
-    )
-  }
-}
+              {<span className="file-name"></span>}
+              </label>
+              </div>
+            </div>
+            <hr/>
+
+          </form>
+*/
