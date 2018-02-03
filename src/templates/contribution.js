@@ -6,6 +6,12 @@ import { default as ContributionCard } from '../components/Contribution/Card'
 import { youtubeThumbnail, youtubeId } from '../lib/url_utils';
 
 
+const RAND_DESCRIPTION_GENERATORS = [
+  (fName, lName, title) => `"${title}" - Un argument CHOC 👊 par ${fName} ${lName} !`,
+  (fName, lName, title) => `${fName} ${lName} : "${title}". Valab !`,
+  (fName, lName, title) => `${fName} ${lName} : "${title}". Awa ?`,
+]
+
 export default class ContributionPage extends React.PureComponent {
   constructor(props) {
     props.pathContext.contribution.SpeakerPicture = require(`../assets/speakers/${props.pathContext.contribution.id}.jpg`)
@@ -18,7 +24,7 @@ export default class ContributionPage extends React.PureComponent {
       <div className="page-contribution">
         {/*TODO Voir les autres arguments de la catégorie...*/}
         <Helmet>
-          <meta property="og:description" content={`"${contrib.Title}" - Un argument choc 👊 par ${contrib.FirstName} ${contrib.LastName}`}/>
+          <meta property="og:description" content={this.randomDescription(contrib.FirstName, contrib.LastName, contrib.Title)}/>
           {this.getBannerMeta()}
         </Helmet>
         <div className="container">
@@ -26,6 +32,10 @@ export default class ContributionPage extends React.PureComponent {
         </div>
       </div>
     )
+  }
+
+  randomDescription(fName, lName, title) {
+    return RAND_DESCRIPTION_GENERATORS[Math.floor(Math.random()*RAND_DESCRIPTION_GENERATORS.length)](fName, lName, title)
   }
 
   getBannerMeta() {
