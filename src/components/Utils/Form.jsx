@@ -61,7 +61,7 @@ export default class Form extends React.PureComponent {
   onSubmit(e) {
     e.preventDefault()
     this.setState({'__submitStatus': 'submitting'})
-    const {__submitStatus, ...values} = this.state
+    const {__submitStatus, __formRev, ...values} = this.state
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -88,6 +88,8 @@ export default class Form extends React.PureComponent {
 
   Input(props) {
     const disabled = this.state.__submitStatus === 'submitting'
+    if (!this.state[props.name])
+      this.state[props.name] = ""
     return <input onChange={this.onChange}
                   value={this.state[props.name] || ""}
                   disabled={disabled}
@@ -96,6 +98,8 @@ export default class Form extends React.PureComponent {
 
   TextArea(props) {
     const disabled = this.state.__submitStatus === 'submitting'
+    if (!this.state[props.name])
+      this.state[props.name] = ""
     return <textarea onChange={this.onChange}
                      value={this.state[props.name]}
                      className="textarea"
