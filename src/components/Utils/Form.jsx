@@ -25,15 +25,16 @@ export default class Form extends React.PureComponent {
   render() {
     return (
       <form className="form"
-            method="POST"
-            action="/"
             onSubmit={(e) => this.onSubmit(e)}
             name={this.props.name}
+            netlify-honeypot="loveYouBot"
             data-netlify="true">
         <h3 className="title is-3">{this.props.title}</h3>
         {this.renderSubmitStatus()}
         {this.renderContent()}
-        <input type="hidden" name="form-name" value={this.props.name}/>
+        <div style={{display: 'none'}}>
+          <input name="loveYouBot" value=""/>
+        </div>
       </form>
     )
   }
@@ -61,21 +62,21 @@ export default class Form extends React.PureComponent {
     })
   }
 
-  onSubmit(e) {/*
+  onSubmit(e) {
     e.preventDefault()
     this.setState({'__submitStatus': 'submitting'})
     const {__submitStatus, __formRev, ...values} = this.state
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode(values)
+      body: this.encode({ "form-name": this.props.name, ...values })
     }).then(() => {
       this.setState({__submitStatus: 'success'})
     }).catch(error => {
       this.setState({__submitStatus: 'error'})
     });
     return false
-  */}
+  }
 
   onChange(e) {
     this.setState({[e.target.name]: e.target.value, __formRev: this.state.__formRev + 1})
