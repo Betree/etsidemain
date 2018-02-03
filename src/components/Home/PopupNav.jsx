@@ -9,7 +9,7 @@ const PopupNav = (({closeModal}) => {
   return (
     <div className="modal-card start-visit-popup-card">
       <section className="modal-card-body">
-        <h2 className="has-text-centered title is-4">Je découvre...</h2>
+        <h2 className="has-text-centered title is-4">Je découvre les arguments...</h2>
         <div className="columns">
           <Button onClick={closeModal} url="/categories" iconName="tags" label="Par catégorie"/>
           <Button onClick={closeModal} url="/au-hasard" iconName="random" label="Au hasard"/>

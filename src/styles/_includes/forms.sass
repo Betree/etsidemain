@@ -1,0 +1,19 @@
+.form
+  .title
+    font-family: 'Bebas'
+    font-weight: bold
+    &.is-1
+      text-shadow: 0px 0px 1px $grey-dark
+      font-size: 5em
+      color: white
+    &.is-2
+      @extend .box
+      background: $red-invert
+      color: $red
+
+.contact-fields
+  .column.separator
+    vertical-align: text-bottom
+    padding-top: 3.25em
+    +mobile
+      padding: 0.75rem 0.75rem 0 0.75rem

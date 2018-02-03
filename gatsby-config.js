@@ -35,7 +35,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`,
     `gatsby-transformer-json`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-nprogress`

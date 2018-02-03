@@ -28,13 +28,16 @@
   content: "\1f500";
 }
 .icon-twitter:before {
-  content: "\f081";
+  content: "\1f426";
 }
 .icon-facebook:before {
-  content: "\f082";
+  content: "\46";
 }
 .icon-external-link:before {
   content: "\1f517";
+}
+.icon-upload:before {
+  content: "\2b06";
 }
 .icon-internet:before {
   content: "\1f30f";
@@ -51,6 +54,9 @@
 .icon-file-text:before {
   content: "\1f5b9";
 }
+.icon-phone:before {
+  content: "\1f4de";
+}
 .icon-reply:before {
   content: "\21a9";
 }
@@ -59,6 +65,9 @@
 }
 .icon-video:before {
   content: "\25b6";
+}
+.icon-send:before {
+  content: "\1f48c";
 }
 .icon-share-alt:before {
   content: "\1f4f2";

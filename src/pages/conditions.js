@@ -2,32 +2,32 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 import Icon from '../components/Utils/Icon'
+import Message from '../components/Utils/Message'
 import Rules from '../components/Contribution/Rules'
 
 
 const Conditions = () =>
-  <div className="container is-size-5" style={{paddingTop: '1em'}}>
+  <div className="page-conditions">
     <Helmet>
       <meta property="og:description" content="Règles de participation et conditions d'utilisation"/>
     </Helmet>
-    <div className="content box">
-      <h1>Règles</h1>
-      <Rules/>
-      <h1>Légal</h1>
+    <h1 className="title is-1 is-centered has-text-centered">Conditions de participation</h1>
+    <Message className="content">
       <p>
-        Vous soumettez vos vidéos sous une licence&nbsp;
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>,
-        qui permet à des professeurs ou à des associations de réexploiter librement le contenu envoyé.
+        Vous soumettez vos vidéos sous une
+        licence <a target="_BLANK" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Creative Commons Attribution -
+        Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0)</a> qui
+        permet la libre utilisation du contenu envoyé par toute partie sous respect des conditions de la dite license.
         <br/><br/>
         Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée, vous disposez d’un droit d’accès 
         et de rectification aux informations qui vous concernent. Vous pouvez accéder à ces informations par simple mail 
-        à etsidemain.nc@gmail.com. Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des 
-        données vous concernant.
+        à <a href="mailto:etsidemain.nc@gmail.com">etsidemain.nc@gmail.com</a>.
+        Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.
         <br/><br/>
         Pour en savoir plus sur vos droits, consultez le site de la CNIL:&nbsp;
         <a href="https://www.cnil.fr/comprendre-vos-droitsconsultez">https://www.cnil.fr/comprendre-vos-droitsconsultez</a>
       </p>
-    </div>
+    </Message>
   </div>
 
 
