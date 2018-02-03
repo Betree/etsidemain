@@ -18,7 +18,7 @@ export default class ContributionPage extends React.PureComponent {
       <div className="page-contribution">
         {/*TODO Voir les autres arguments de la catégorie...*/}
         <Helmet>
-          <meta property="og:description" content={`${contrib.FirstName} ${contrib.LastName} - "${contrib.Title}"`}/>
+          <meta property="og:description" content={`"${contrib.Title}" - Un argument choc 👊 par ${contrib.FirstName} ${contrib.LastName}`}/>
           {this.getBannerMeta()}
         </Helmet>
         <div className="container">

@@ -70,13 +70,13 @@ export default class Form extends React.PureComponent {
 
     // Build payload
     const payload = {method: "POST"}
-    if (this.props.isFormData) {
+    /*if (this.props.isFormData) {
       payload.headers = {"Content-Type": "multipart/form-data"}
       payload.body = this.multipartFormData(values)
-    } else {
+    } else {*/
       payload.headers ={ "Content-Type": "application/x-www-form-urlencoded" }
       payload.body = this.encode({ "form-name": this.props.name, ...values })
-    }
+    //}
 
     // Send request
     fetch("/", payload).then(() => {

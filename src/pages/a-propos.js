@@ -13,7 +13,7 @@ const About = () =>
     <h1 className="title is-1 is-centered has-text-centered">A Propos</h1>
     <div className="container">
       <Message>
-        <p>
+        <p className="is-size-4">
           <strong>Et si demain...</strong> est un collectif ouvert et
           indépendant qui s'associe avec des médias partenaires dans le but d'allier participation
           citoyenne et travail journalistique. Toutes les personnes et entités impliquées sont tenues de travailler en accord
@@ -34,6 +34,7 @@ const About = () =>
           via le formulaire ci-dessous.
         </p>
       </Message>
+      <hr/>
       <div className="box">
         <Form name="contact" title="Contact">
           {formComponents => 

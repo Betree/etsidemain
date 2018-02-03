@@ -195,11 +195,6 @@
   ],
   "Resources": [
     {
-      "Title": "Charte du projet Et si demain",
-      "URL": "https://docs.google.com/document/d/1a209ElQnmL6gM9KQI6bjxDlBLT48BtETn_5VGqI7BJY/edit#heading=h.axlsg9iojl4j",
-      "Type": "Textes"
-    },
-    {
       "Title": "Accord de Nouméa",
       "URL": "https://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000555817&dateTexte=&categorieLien=id",
       "Type": "Textes"
@@ -218,6 +213,7 @@
   "ResourcesTypes": [
     "Textes",
     "Conférences",
-    "Sites Internet"
+    "Sites Internet",
+    "Vidéos"
   ]
 }
