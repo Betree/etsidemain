@@ -14,7 +14,7 @@ const TYPE_RECORD = 'record'
 export default class ContributionForm extends React.PureComponent {
   render() {
     return (
-      <form className="form" name="contribution" netlify>
+      <form className="form" name="contribution" data-netlify="true">
         <h3 className="title is-3">Envoi d'une vidéo</h3>
         <ContactFields/>
         <hr/>

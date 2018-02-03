@@ -34,7 +34,7 @@ const About = () =>
         </p>
       </Message>
       <div className="box">
-        <form className="form" name="contact" netflify>
+        <form className="form" name="contact" data-netlify="true">
           <h3 className="title is-3">Contact</h3>
           <ContactFields/>
           <hr/>
