@@ -13,9 +13,10 @@ import Message from './Message'
 export default class Form extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.state = {__submitStatus: null, __formRev: 0}
+    this.state = {__submitStatus: null}
     this.onSubmit = this.onSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
+    this.onChangeFile = this.onChangeFile.bind(this)
     this.Input = this.Input.bind(this)
     this.TextArea = this.TextArea.bind(this)
     this.FieldWithIcon = this.FieldWithIcon.bind(this)
@@ -58,19 +59,27 @@ export default class Form extends React.PureComponent {
       TextArea: this.TextArea,
       FieldWithIcon: this.FieldWithIcon,
       Submit: this.Submit,
-      __formRev: this.state.__formRev
+      values: this.getValues()
     })
   }
 
   onSubmit(e) {
     e.preventDefault()
     this.setState({'__submitStatus': 'submitting'})
-    const {__submitStatus, __formRev, ...values} = this.state
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({ "form-name": this.props.name, ...values })
-    }).then(() => {
+    const values = this.getValues()
+
+    // Build payload
+    const payload = {method: "POST"}
+    if (this.props.isFormData) {
+      payload.headers = {"Content-Type": "multipart/form-data"}
+      payload.body = this.multipartFormData(values)
+    } else {
+      payload.headers ={ "Content-Type": "application/x-www-form-urlencoded" }
+      payload.body = this.encode({ "form-name": this.props.name, ...values })
+    }
+
+    // Send request
+    fetch("/", payload).then(() => {
       this.setState({__submitStatus: 'success'})
     }).catch(error => {
       this.setState({__submitStatus: 'error'})
@@ -78,8 +87,21 @@ export default class Form extends React.PureComponent {
     return false
   }
 
+  multipartFormData(values) {
+    console.log(values)
+    var formData  = new FormData()
+    Object.keys(values).forEach(key => {
+      formData.append(key, values[key])
+    })
+    return formData
+  }
+
   onChange(e) {
-    this.setState({[e.target.name]: e.target.value, __formRev: this.state.__formRev + 1})
+    this.setState({[e.target.name]: e.target.value})
+  }
+
+  onChangeFile(e) {
+    this.setState({[e.target.name]: e.target.files[0]})
   }
 
   encode(data) {
@@ -88,14 +110,19 @@ export default class Form extends React.PureComponent {
         .join("&");
   }
 
+  getValues() {
+    const {__submitStatus, ...values} = this.state
+    return values
+  }
+
   /* ---- Fields ---- */
 
   Input(props) {
     const disabled = this.state.__submitStatus === 'submitting'
     if (!this.state[props.name])
       this.state[props.name] = ""
-    return <input onChange={this.onChange}
-                  value={this.state[props.name] || ""}
+    return <input onChange={props.type === 'file' ? this.onChangeFile : this.onChange}
+                  value={props.type === 'file' ? undefined : this.state[props.name]}
                   disabled={disabled}
                   {...props}/>
   }

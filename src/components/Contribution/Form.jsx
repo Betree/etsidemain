@@ -15,9 +15,9 @@ const TYPE_RECORD = 'record'
 export default class ContributionForm extends React.PureComponent {
   render() {
     return (
-      <Form name="contribution" title="Envoi d'une vidéo">
+      <Form name="contribution" title="Envoi d'une vidéo" isFormData={true}>
         {formComponents =>
-          <React.Fragment>
+          <div>
             <ContactFields formComponents={formComponents}/>
             <hr/>
             <div className="field">
@@ -30,23 +30,29 @@ export default class ContributionForm extends React.PureComponent {
                       <Icon name="upload"/>
                     </span>
                     <span className="file-label">
-                      Formats: mp4, webm, 3gp, mpeg, avi...
+                      Formats: mp4, 3gp, avi...
                     </span>
                   </span>
-                  {/*<span className="file-name"></span>*/}
+                  {this.renderVideoFilePath(formComponents)}
                 </label>
               </div>
             </div>
             <hr/>
             <label className="checkbox is-size-5 box terms">
-              <formComponents.Input type="checkbox"/>&nbsp;
+              <formComponents.Input type="checkbox" name="AcceptRulesAndTerms"/>&nbsp;
               J'accepte <Link to="/conditions" target="_BLANK">les règles et conditions de participation</Link>
             </label>
             <formComponents.Submit/>
-          </React.Fragment>
+          </div>
         }
       </Form>
     )
+  }
+
+  renderVideoFilePath(formData) {
+    if (!formData.values || !formData.values.video)
+      return null
+    return <span className="file-name">{formData.values.video.name}</span>
   }
 }
 
