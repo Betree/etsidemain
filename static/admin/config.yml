@@ -19,7 +19,7 @@ collections:
     folder: /src/data/speakers
     create: true
     fields:
-      - {name: name, label: Nom, widget: string}
+      - {name: title, label: Nom, widget: string}
       - {name: occupation, label: Occupation, widget: string}
       - {name: location, label: Lieu, widget: string}
       - {name: picture, label: Photo, widget: image}
@@ -31,7 +31,7 @@ collections:
     fields:
       - {name: title, label: Titre, widget: string}
       - {name: videoURL, label: URL de la vidéo, widget: string, pattern: ['(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})', "Doit être une URL Youtube"]}
-      - {name: speaker, label: Intervenant, widget: relation, collection: speakers, searchFields: [name], valueField: name}
+      - {name: speaker, label: Intervenant, widget: relation, collection: speakers, searchFields: [title], valueField: title}
       - {name: category1, label: Catégorie principale, widget: relation, collection: categories, searchFields: [title], valueField: title}
       - {name: category2, label: Catégorie secondaire, widget: relation, required: false, collection: categories, searchFields: [title], valueField: title}
       - {name: confirm, label: C'est pas faux !, widget: markdown, required: false}
