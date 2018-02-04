@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: feature/cms
+  media_folder: static/uploads
+  public_folder: /uploads
+
+collections:
+  - name: categories
+    label: Categories
+    folder: /src/data/categories
+    fields:
+      - {name: title, label: Titre, widget: string}
+      - {name: picture, label: Image, widget: image}
+      - {name: animation, label: Animation, widget: file}
+
+  - name: speakers
+    label: "Intervenants"
+    folder: /src/data/speakers
+    create: true
+    fields:
+      - {name: firstName, label: Prénom, widget: string}
+      - {name: lastName, label: Nom, widget: string}
+      - {name: occupation, label: Occupation, widget: string}
+      - {name: location, label: Lieu, widget: string}
+      - {name: picture, label: Photo, widget: image}
+
+  - name: contributions
+    label: Contributions
+    folder: /src/data/contributions
+    create: true
+    fields:
+      - {name: title, label: Titre, widget: string}
+      - {name: videoURL, label: URL de la vidéo, widget: string, pattern: ['(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})', "Doit être une URL Youtube"]}
+      - {name: speaker, label: Intervenant, widget: relation, collection: speakers, searchFields: [firstName, lastName], valueField: firstName}
+      - {name: category1, label: Catégorie principale, widget: relation, collection: categories, searchFields: [title], valueField: title}
+      - {name: category2, label: Catégorie secondaire, widget: relation, required: false, collection: categories, searchFields: [title], valueField: title}
+      - {name: confirm, label: C'est pas faux !, widget: markdown, required: false}
+      - {name: refute, label: Mais..., widget: markdown, required: false}
+      - {name: info, label: On vous en dit +, widget: markdown, required: false}
+      - name: replyTo
+        label: En réponse à...
+        widget: relation
+        required: false
+        collection: contributions
+        searchFields: [title, videoURL]
+        valueField: title
