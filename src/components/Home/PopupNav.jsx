@@ -5,7 +5,6 @@ import Icon from '../Utils/Icon'
 
 
 const PopupNav = (({closeModal}) => {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 800
   return (
     <div className="modal-card start-visit-popup-card">
       <section className="modal-card-body">
@@ -13,7 +12,6 @@ const PopupNav = (({closeModal}) => {
         <div className="columns">
           <Button onClick={closeModal} url="/categories" iconName="tags" label="Par catégorie"/>
           <Button onClick={closeModal} url="/au-hasard" iconName="random" label="Au hasard"/>
-          {isMobile === false && <Button onClick={closeModal} url="/carte" iconName="line-chart" label="En mode expert"/>}
         </div>
       </section>
     </div>

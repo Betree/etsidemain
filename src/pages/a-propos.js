@@ -1,8 +1,5 @@
 import React from 'react'
-import UsefulResources from '../components/About/UsefulResources'
-import Meetup from '../components/About/Meetup'
 
-import Icon from '../components/Utils/Icon'
 import Message from '../components/Utils/Message'
 import ContactFields from '../components/Utils/ContactFields'
 import Form from '../components/Utils/Form'
@@ -16,13 +13,15 @@ const About = () =>
         <p className="is-size-4">
           <strong>Et si demain...</strong> est un collectif ouvert et
           indépendant qui s'associe avec des médias partenaires dans le but d'allier participation
-          citoyenne et travail journalistique. Toutes les personnes et entités impliquées sont tenues de travailler en accord
-          avec <strong><a href="https://docs.google.com/document/d/1a209ElQnmL6gM9KQI6bjxDlBLT48BtETn_5VGqI7BJY/edit#">notre cadre de confiance</a></strong> ainsi
-          qu'avec les dix devoirs de la <strong><a href="https://fr.wikipedia.org/wiki/Charte_de_Munich">charte de Munich</a></strong>.
+          citoyenne et travail journalistique. Toutes les personnes et entités impliquées dans le projet
+          doivent respecter <strong><a href="https://docs.google.com/document/d/1a209ElQnmL6gM9KQI6bjxDlBLT48BtETn_5VGqI7BJY/edit#">notre cadre de confiance</a></strong> ainsi
+          que les dix devoirs de la <strong><a href="https://fr.wikipedia.org/wiki/Charte_de_Munich">charte de Munich</a></strong>.
           <br/><br/>
           Le projet est né lors du premier Hackathon de Nouvelle-Calédonie (novembre 2017) organisé 
-          par <a href="http://www.observatoire-numerique.nc">l'observatoire du numérique</a>. Il est le fruit
-          d'un travail commun entre Falai Huedro (journaliste @ Caledonia), Blandine Guillet (rédactrice en chef @ Caledonia),
+          par <a href="http://www.observatoire-numerique.nc">l'observatoire du numérique</a> où il
+          a remporté le prix "Coup de coeur du jury".
+          Il est le fruit d'un travail commun entre Falai Huedro (journaliste @ Caledonia),
+          Blandine Guillet (rédactrice en chef @ Caledonia),
           Clémentine Prévot (motion designer) et Benjamin Piouffle (développeur) avec le soutient de la
           chaine <a href="http://caledonia.nc/">Caledonia</a>.
           <br/><br/>

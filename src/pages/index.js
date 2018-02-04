@@ -18,7 +18,7 @@ export default class Home extends React.PureComponent {
                      className="video"
                      width="1920"
                      onEnded={() => this.onEnded()}
-                     config={{youtube: {playerVars: {modestbranding: 1, origin: 'demo.etsidemain.nc'}}}}
+                     config={{youtube: {playerVars: {modestbranding: 1, origin: 'demo.etsidemain.nc', hl: 'fr', cc_load_policy: 0}}}}
                      />
         <Modal display="popup" isActive={this.state.hasModal}>
           <PopupNav/>
