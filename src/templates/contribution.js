@@ -39,8 +39,7 @@ export default class ContributionPage extends React.PureComponent {
   }
 
   getBannerMeta() {
-    let meta = {image: "/static/banner.jpg", type: "image/jpeg", width: "1200", height: "630"}
-    // TODO Get youtube id and if not null fill meta with good params
+    const meta = {image: "/static/banner.jpg", type: "image/jpeg", width: "1200", height: "630"}
     const videoId = youtubeId(this.props.pathContext.contribution.Content)
     if (videoId) {
       meta.image = youtubeThumbnail(videoId)

@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Et si demain...`,
+    description: "Et si demain la Calédonie... était indépendante ? Restait dans la France ? Qu'auriez-vous à dire sur le sujet ?",
+    siteUrl: "https://demo.etsidemain.nc"
   },
   plugins: [
     `gatsby-plugin-react-helmet`, 
@@ -14,26 +16,11 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: "Et si demain...",
-        short_name: "Et si demain...",
-        start_url: "/",
-        background_color: "#4497ae",
-        theme_color: "#f5f5f5",
-        display: "minimal-ui",
-        icons: [
-          {
-            "src": "/favicons/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-          },
-          {
-              "src": "/favicons/android-chrome-512x512.png",
-              "sizes": "512x512",
-              "type": "image/png"
-          }
-        ],
-      },
+      options: require("./src-gatsby/plugin_options/gatsby-plugin-manifest"),
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: require("./src-gatsby/plugin_options/gatsby-plugin-feed"),
     },
     `gatsby-transformer-json`,
     //`gatsby-plugin-netlify`,

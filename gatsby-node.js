@@ -7,7 +7,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage, createNode } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
         `
