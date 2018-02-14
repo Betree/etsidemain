@@ -19,7 +19,7 @@ export default class Participate extends React.PureComponent {
           <Message status="info" header="Vous pouvez nous envoyer vos vidéos...">
             <ul style={{listStyle: 'inside'}}>
               <li>
-                Par message privé sur <a className="has-text-weight-bold" target="_BLANK" href="https://www.facebook.com/pg/Et-si-demain-933594156792342">Facebook</a>
+                Par message privé sur <a className="has-text-weight-bold" target="_BLANK" href="https://www.facebook.com/etsidemain.nc/">Facebook</a>
               </li>
               <li>
                 Par email sur <a className="has-text-weight-bold" href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a>

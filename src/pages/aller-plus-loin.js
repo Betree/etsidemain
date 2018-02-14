@@ -27,7 +27,7 @@ const GoFurther = ({data: {dataJson: {Resources, ResourcesTypes}}}) =>
       <div className="column is-6 is-offset-3">
         <Message status="info" style={{textAlign: 'center'}}>
           Envoyez nous vos liens et vos évenements sur <a href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a> ou 
-          par message privé sur <a href="https://www.facebook.com/pg/Et-si-demain-933594156792342">Facebook</a>
+          par message privé sur <a href="https://www.facebook.com/etsidemain.nc/">Facebook</a>
         </Message>
       </div>
     </div>

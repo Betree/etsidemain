@@ -19,17 +19,17 @@ const About = () =>
           <br/><br/>
           Le projet est né lors du premier Hackathon de Nouvelle-Calédonie (novembre 2017) organisé 
           par <a href="http://www.observatoire-numerique.nc">l'observatoire du numérique</a> où il
-          a remporté le prix "Coup de coeur du jury".
+          a remporté le prix "Coup de cœur du jury".
           Il est le fruit d'un travail commun entre Falai Huedro (journaliste @ Caledonia),
           Blandine Guillet (rédactrice en chef @ Caledonia),
-          Clémentine Prévot (motion designer) et Benjamin Piouffle (développeur) avec le soutient de la
-          chaine <a href="http://caledonia.nc/">Caledonia</a>.
+          Clémentine Prévot (motion designer) et Benjamin Piouffle (développeur) avec le soutien de la
+          chaîne <a href="http://caledonia.nc/">Caledonia</a>.
           <br/><br/>
-          L'ensemble du code est <a href="https://github.com/Betree/etsidemain">publié</a> sous license <strong>open-source</strong> (AGPL3).
+          L'ensemble du code est <a href="https://github.com/Betree/etsidemain">publié</a> sous licence <strong>open-source</strong> (AGPL3).
           Vous pouvez l'utiliser, le modifier et le partager librement.
           <br/><br/>
           Vous pouvez nous contacter sur <a href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a>, 
-          par message privé sur <a href="https://www.facebook.com/pg/Et-si-demain-933594156792342">Facebook</a> ou
+          par message privé sur <a href="https://www.facebook.com/etsidemain.nc/">Facebook</a> ou
           via le formulaire ci-dessous.
         </p>
       </Message>
