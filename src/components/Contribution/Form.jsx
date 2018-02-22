@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import classNames from 'classnames'
 
 import Icon from '../Utils/Icon'
-import ContactFields from '../Utils/ContactFields'
+import { default as ContactFields, validateContactFields } from '../Utils/ContactFields'
 import Form from '../Utils/Form'
 
 
@@ -15,7 +15,7 @@ const TYPE_RECORD = 'record'
 export default class ContributionForm extends React.PureComponent {
   render() {
     return (
-      <Form name="contribution" title="Envoi d'une vidéo" isFormData={true}>
+      <Form name="contribution" title="Envoi d'une vidéo" validate={this.validate}>
         {formComponents =>
           <div>
             <ContactFields formComponents={formComponents}/>
@@ -24,22 +24,13 @@ export default class ContributionForm extends React.PureComponent {
               <div className="file has-name is-boxed">
                 <label className="file-label">
                   <label className="label" htmlFor="video-file">Fichier vidéo</label>
-                  <formComponents.Input className="file-input" accept="video/*" type="file" name="video" required/>
-                  <span className="file-cta">
-                    <span className="file-icon">
-                      <Icon name="upload"/>
-                    </span>
-                    <span className="file-label">
-                      Formats: mp4, 3gp, avi...
-                    </span>
-                  </span>
-                  {this.renderVideoFilePath(formComponents)}
+                  <formComponents.Uploader name="Video"/>
                 </label>
               </div>
             </div>
             <hr/>
             <label className="checkbox is-size-5 box terms">
-              <formComponents.Input type="checkbox" name="AcceptRulesAndTerms"/>&nbsp;
+              <formComponents.CheckBox name="AcceptRulesAndTerms"/>&nbsp;
               J'accepte <Link to="/conditions" target="_BLANK">les règles et conditions de participation</Link>
             </label>
             <formComponents.Submit/>
@@ -49,13 +40,21 @@ export default class ContributionForm extends React.PureComponent {
     )
   }
 
-  renderVideoFilePath(formData) {
-    if (!formData.values || !formData.values.video)
-      return null
-    return <span className="file-name">{formData.values.video.name}</span>
+  validate(data) {
+    if (!validateContactFields(data))
+      return false
+    console.log(data)
+    if (!data.AcceptRulesAndTerms)
+      alert("Vous devez accepter les règles et conditions de participation")
+    else if (!data.Video)
+      alert("Sélectionnez un fichier vidéo")
+    else if (data.Video === "UPLOADING")
+      alert("Merci d'attendre la fin de l'envoi du fichier")
+    else
+      return true
+    return false
   }
 }
-
 
 /*
 

@@ -79,7 +79,7 @@ export default class CategoryContributions extends React.PureComponent {
       <article className="message is-info">
         <div className="message-body is-size-4">
           <Icon name="info-circle"/>&nbsp;
-          <span>Aucune contribution dans cette thématique. <a>Envoyez la votre !</a></span>
+          <span>Aucune contribution dans cette thématique. <Link to="/participer">Envoyez la votre !</Link></span>
         </div>
       </article>
     )

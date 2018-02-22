@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Message from '../components/Utils/Message'
-import ContactFields from '../components/Utils/ContactFields'
+import { default as ContactFields, validateContactFields } from '../components/Utils/ContactFields'
 import Form from '../components/Utils/Form'
 
 
@@ -35,7 +35,7 @@ const About = () =>
       </Message>
       <hr/>
       <div className="box">
-        <Form name="contact" title="Contact">
+        <Form name="contact" title="Contact" validate={validateContactFields}>
           {formComponents => 
             <div>
               <ContactFields formComponents={formComponents}/>
