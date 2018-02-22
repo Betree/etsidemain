@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import Icon from './Icon'
 import Message from './Message'
-import FileUploader from '../Utils/FileUploader'
+// import FileUploader from '../Utils/FileUploader'
 
 
 /**
@@ -20,7 +20,7 @@ export default class Form extends React.PureComponent {
     this.CheckBox = this.CheckBox.bind(this)
     this.Input = this.Input.bind(this)
     this.TextArea = this.TextArea.bind(this)
-    this.Uploader = this.Uploader.bind(this)
+    // this.Uploader = this.Uploader.bind(this)
     this.FieldWithIcon = this.FieldWithIcon.bind(this)
     this.Submit = this.Submit.bind(this)
   }
@@ -135,20 +135,20 @@ export default class Form extends React.PureComponent {
                      {...props}/>
   }
 
-  Uploader(props) {
-    return <FileUploader value={this.state[props.name]}
-                         onChange={file => {
-                          if (file) {
-                            file.done((info) => {
-                              this.onChange({target: {name: props.name, value: info.originalUrl}})
-                            })
-                          } else {
-                            this.onChange({target: {name: props.name, value: "UPLOADING"}})
-                          }
-                         }}
-                         {...props}
-                         />
-  }
+  // Uploader(props) {
+  //   return <FileUploader value={this.state[props.name]}
+  //                        onChange={file => {
+  //                         if (file) {
+  //                           file.done((info) => {
+  //                             this.onChange({target: {name: props.name, value: info.originalUrl}})
+  //                           })
+  //                         } else {
+  //                           this.onChange({target: {name: props.name, value: "UPLOADING"}})
+  //                         }
+  //                        }}
+  //                        {...props}
+  //                        />
+  // }
 
   /* ---- Helpers ---- */
 
