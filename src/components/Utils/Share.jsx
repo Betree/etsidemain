@@ -58,7 +58,7 @@ function twitterLink(url, message, hashTags) {
 
 function facebookLink(url, message, hashTags) {
   // Doesn't work with localhost
-  return `https://www.facebook.com/dialog/share?app_id=166652520772209&display=page&href=${url}&hashtag=${hashTags[0]}&quote=${encodeURI(message)}`
+  return `https://www.facebook.com/dialog/share?app_id=166652520772209&display=page&href=${url}&hashtag=#${hashTags[0]}&quote=${encodeURI(message)}`
 }
 
 function mailLink(url, message) {
