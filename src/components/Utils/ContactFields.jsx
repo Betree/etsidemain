@@ -33,3 +33,11 @@ export default class ContactFields extends React.PureComponent {
     )
   }
 }
+
+export const validateContactFields = (fields) => {
+  if (!fields.Email && !fields.Phone)
+    alert("Vous devez spécifier votre email ou un numéro de téléphone")
+  else
+    return true
+  return false
+}

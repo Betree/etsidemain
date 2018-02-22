@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import Icon from './Icon'
 import Message from './Message'
+import FileUploader from '../Utils/FileUploader'
 
 
 /**
@@ -16,9 +17,10 @@ export default class Form extends React.PureComponent {
     this.state = {__submitStatus: null}
     this.onSubmit = this.onSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
-    this.onChangeFile = this.onChangeFile.bind(this)
+    this.CheckBox = this.CheckBox.bind(this)
     this.Input = this.Input.bind(this)
     this.TextArea = this.TextArea.bind(this)
+    this.Uploader = this.Uploader.bind(this)
     this.FieldWithIcon = this.FieldWithIcon.bind(this)
     this.Submit = this.Submit.bind(this)
   }
@@ -56,27 +58,27 @@ export default class Form extends React.PureComponent {
       return null
     return this.props.children({
       Input: this.Input,
+      CheckBox: this.CheckBox,
       TextArea: this.TextArea,
       FieldWithIcon: this.FieldWithIcon,
       Submit: this.Submit,
+      Uploader: this.Uploader,
       values: this.getValues()
     })
   }
 
   onSubmit(e) {
     e.preventDefault()
-    this.setState({'__submitStatus': 'submitting'})
     const values = this.getValues()
+    if (this.props.validate && !this.props.validate(values))
+      return false
+      
+    this.setState({'__submitStatus': 'submitting'})
 
     // Build payload
     const payload = {method: "POST"}
-    /*if (this.props.isFormData) {
-      payload.headers = {"Content-Type": "multipart/form-data"}
-      payload.body = this.multipartFormData(values)
-    } else {*/
-      payload.headers ={ "Content-Type": "application/x-www-form-urlencoded" }
-      payload.body = this.encode({ "form-name": this.props.name, ...values })
-    //}
+    payload.headers ={ "Content-Type": "application/x-www-form-urlencoded" }
+    payload.body = this.encode({ "form-name": this.props.name, ...values })
 
     // Send request
     fetch("/", payload).then(() => {
@@ -87,21 +89,8 @@ export default class Form extends React.PureComponent {
     return false
   }
 
-  multipartFormData(values) {
-    console.log(values)
-    var formData  = new FormData()
-    Object.keys(values).forEach(key => {
-      formData.append(key, values[key])
-    })
-    return formData
-  }
-
   onChange(e) {
     this.setState({[e.target.name]: e.target.value})
-  }
-
-  onChangeFile(e) {
-    this.setState({[e.target.name]: e.target.files[0]})
   }
 
   encode(data) {
@@ -121,10 +110,18 @@ export default class Form extends React.PureComponent {
     const disabled = this.state.__submitStatus === 'submitting'
     if (!this.state[props.name])
       this.state[props.name] = ""
-    return <input onChange={props.type === 'file' ? this.onChangeFile : this.onChange}
-                  value={props.type === 'file' ? undefined : this.state[props.name]}
+    return <input onChange={this.onChange}
+                  value={this.state[props.name]}
                   disabled={disabled}
                   {...props}/>
+  }
+
+  CheckBox(props) {
+    return <this.Input type="checkbox" 
+                       onChange={e => this.onChange({
+                         target: {name: props.name, value: e.target.checked}
+                        })}
+                       {...props}/>
   }
 
   TextArea(props) {
@@ -136,6 +133,19 @@ export default class Form extends React.PureComponent {
                      className="textarea"
                      disabled={disabled}
                      {...props}/>
+  }
+
+  Uploader(props) {
+    return <FileUploader value={this.state[props.name]}
+                         onChange={file => {
+                          if (file) {
+                            file.done((info) => {
+                              this.onChange({target: {name: props.name, value: file.originalUrl}})
+                            })
+                          } else {
+                            this.onChange({target: {name: props.name, value: "UPLOADING"}})
+                          }
+                         }}/>
   }
 
   /* ---- Helpers ---- */
