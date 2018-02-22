@@ -31,15 +31,19 @@ export default class Participate extends React.PureComponent {
               <li>
                 Par email sur <a className="has-text-weight-bold" href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a>
               </li>
-              <li>
-                En utilisant le formulaire ci-dessous...
-              </li>
+              {
+                // <li>
+                //   En utilisant le formulaire ci-dessous...
+                // </li>
+              }
             </ul>
           </Message>
         </div>
+        {/*
         <div className="container box">
           <ContributionForm/>
         </div>
+        */}
       </div>
     )
   }
