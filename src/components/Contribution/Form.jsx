@@ -43,7 +43,6 @@ export default class ContributionForm extends React.PureComponent {
   validate(data) {
     if (!validateContactFields(data))
       return false
-    console.log(data)
     if (!data.AcceptRulesAndTerms)
       alert("Vous devez accepter les règles et conditions de participation")
     else if (!data.Video)

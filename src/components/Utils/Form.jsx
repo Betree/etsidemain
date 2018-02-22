@@ -140,12 +140,14 @@ export default class Form extends React.PureComponent {
                          onChange={file => {
                           if (file) {
                             file.done((info) => {
-                              this.onChange({target: {name: props.name, value: file.originalUrl}})
+                              this.onChange({target: {name: props.name, value: info.originalUrl}})
                             })
                           } else {
                             this.onChange({target: {name: props.name, value: "UPLOADING"}})
                           }
-                         }}/>
+                         }}
+                         {...props}
+                         />
   }
 
   /* ---- Helpers ---- */
