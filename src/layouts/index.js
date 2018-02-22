@@ -6,13 +6,6 @@ import NavBar from '../components/NavBar'
 
 import '../styles/main.sass'
 
-// Configure uploader (only support globals for locale)
-window.UPLOADCARE_PUBLIC_KEY = "44fb506cd37a77f15868"
-window.UPLOADCARE_PREVIEW_STEP = true
-window.UPLOADCARE_TABS = "camera file facebook gdrive instagram"
-window.UPLOADCARE_INPUT_ACCEPT_TYPES = "video/*"
-window.UPLOADCARE_LOCALE = 'fr'
-
 
 const META_DESCRIPTION = "Et si demain la Calédonie... était indépendante ? Restait dans la France ? Qu'auriez-vous à dire sur le sujet ?"
 

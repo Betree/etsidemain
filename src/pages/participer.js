@@ -7,6 +7,13 @@ import ContributionForm from '../components/Contribution/Form'
 import Icon from '../components/Utils/Icon'
 
 
+// Configure uploader (only support globals for locale) 
+global.UPLOADCARE_PUBLIC_KEY = "44fb506cd37a77f15868"
+global.UPLOADCARE_PREVIEW_STEP = true
+global.UPLOADCARE_TABS = "camera file facebook gdrive instagram"
+global.UPLOADCARE_INPUT_ACCEPT_TYPES = "video/*"
+global.UPLOADCARE_LOCALE = 'fr'
+
 export default class Participate extends React.PureComponent {
   render() {
     return (
