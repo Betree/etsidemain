@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Et si demain...`,
     description: "Et si demain la Calédonie... était indépendante ? Restait dans la France ? Qu'auriez-vous à dire sur le sujet ?",
-    siteUrl: "https://demo.etsidemain.nc"
+    siteUrl: "https://etsidemain.nc"
   },
   plugins: [
     `gatsby-plugin-react-helmet`, 
