@@ -47,7 +47,7 @@ export default class RandomContribution extends React.PureComponent {
       return (
         <Message className="is-large is-success" header={<div><Icon name="trophy"/><span> &nbsp;Vous êtes fantastique!</span></div>}>
           <strong>Bravo !</strong> Vous avez regardé toutes les contributions disponnibles.<br/>
-          Envie d'aller + loin ? <Link to="/aller-plus-loin">Interpellez vos élus ou rejoignez
+          Envie d'aller + loin ? <Link to="/aller-plus-loin">Découvrez les ressources disponnibles ou rejoignez
           un débat</Link> organisé par une association prêt de chez vous.
           <br/><br/>
           Vous pouvez aussi cliquer sur <a onClick={() => this.getRandomContrib()}>Un autre !</a> pour
