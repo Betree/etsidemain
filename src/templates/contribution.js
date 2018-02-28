@@ -23,7 +23,6 @@ export default class ContributionPage extends React.PureComponent {
     const contrib = this.props.pathContext.contribution
     return (
       <div className="page-contribution">
-        {/*TODO Voir les autres arguments de la catégorie...*/}
         <Helmet>
           <meta property="og:description" content={this.randomDescription(contrib.FirstName, contrib.LastName, contrib.Title)}/>
           {this.getBannerMeta()}
