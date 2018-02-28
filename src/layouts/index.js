@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
+import { SITE_URL } from '../lib/constants'
 import NavBar from '../components/NavBar'
 
 import '../styles/main.sass'
@@ -28,7 +29,8 @@ class TemplateWrapper extends React.PureComponent {
           <meta property="og:locale" content="fr_FR"/>
           <meta property="og:title" content="Et si demain..."/>
           <meta property="og:description" content={META_DESCRIPTION}/>
-          <meta property="og:image" content="/banner.jpg"/>
+          <meta property="fb:app_id" content="166652520772209"/>
+          <meta property="og:image" content={`${SITE_URL}/banner.jpg`}/>
           <meta property="og:image:type" content="image/jpeg"/>
           <meta property="og:image:width" content="1200"/>
           <meta property="og:image:height" content="630"/>

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { SITE_URL } from '../../lib/constants'
 import Icon from '../Utils/Icon'
 import Modal from '../Modal'
 import Share from '../Utils/Share'
@@ -30,7 +31,7 @@ export default class AnimationFactCard extends React.PureComponent {
           <Modal onClose={() => this.setState({isSharing: false})} display="card"
                  title={<div><Icon name="share-alt"/><span> &nbsp;Partager</span></div>}>
             <Share hashTags={['EtSiDemain', 'NouvelleCalédonie', '2018']}
-                   url={`https://etsidemain.nc/info/${this.props.fact.name}`}/>
+                   url={`${SITE_URL}/info/${this.props.fact.name}`}/>
           </Modal>
         }
       </div>

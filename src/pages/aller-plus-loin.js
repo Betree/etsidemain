@@ -4,6 +4,7 @@ import Meetup from '../components/About/Meetup'
 
 import Icon from '../components/Utils/Icon'
 import Message from '../components/Utils/Message'
+import { FacebookLink, MailTo } from '../components/Contact'
 
 
 const GoFurther = ({data: {dataJson: {Resources, ResourcesTypes}}}) =>
@@ -26,8 +27,8 @@ const GoFurther = ({data: {dataJson: {Resources, ResourcesTypes}}}) =>
       </div>
       <div className="column is-6 is-offset-3">
         <Message status="info" style={{textAlign: 'center'}}>
-          Envoyez nous vos liens et vos évenements sur <a href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a> ou 
-          par message privé sur <a href="https://www.facebook.com/etsidemain.nc/">Facebook</a>
+          Envoyez nous vos liens et vos évenements sur <MailTo/> ou 
+          par message privé sur <FacebookLink/>
         </Message>
       </div>
     </div>

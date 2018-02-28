@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Icon from '../components/Utils/Icon'
 import Message from '../components/Utils/Message'
 import Rules from '../components/Contribution/Rules'
+import { MailTo } from '../components/Contact'
 
 
 const Conditions = () =>
@@ -21,7 +22,7 @@ const Conditions = () =>
         <br/><br/>
         Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée, vous disposez d’un droit d’accès 
         et de rectification aux informations qui vous concernent. Vous pouvez accéder à ces informations par simple mail 
-        à <a href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a>.
+        à <MailTo/>.
         Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.
         <br/><br/>
         Pour en savoir plus sur vos droits, consultez le site de la CNIL :&nbsp;

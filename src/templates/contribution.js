@@ -2,8 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
+import { youtubeThumbnail, youtubeId } from '../lib/url_utils'
 import { default as ContributionCard } from '../components/Contribution/Card'
-import { youtubeThumbnail, youtubeId } from '../lib/url_utils';
+import OtherCategoryArguments from '../components/Categories/OtherCategoryArguments'
 
 
 const RAND_DESCRIPTION_GENERATORS = [
@@ -29,6 +30,7 @@ export default class ContributionPage extends React.PureComponent {
         </Helmet>
         <div className="container">
           <ContributionCard contribution={contrib}/>
+          <OtherCategoryArguments category={contrib.Category1}/>
         </div>
       </div>
     )

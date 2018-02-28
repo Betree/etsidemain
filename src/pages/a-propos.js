@@ -3,6 +3,7 @@ import React from 'react'
 import Message from '../components/Utils/Message'
 import { default as ContactFields, validateContactFields } from '../components/Utils/ContactFields'
 import Form from '../components/Utils/Form'
+import { FacebookLink, MailTo } from '../components/Contact'
 
 
 const About = () =>
@@ -28,9 +29,8 @@ const About = () =>
           L'ensemble du code est <a href="https://github.com/Betree/etsidemain">publié</a> sous licence <strong>open-source</strong> (AGPL3).
           Vous pouvez l'utiliser, le modifier et le partager librement.
           <br/><br/>
-          Vous pouvez nous contacter sur <a href="mailto:contact@etsidemain.nc">contact@etsidemain.nc</a>, 
-          par message privé sur <a href="https://www.facebook.com/etsidemain.nc/">Facebook</a> ou
-          via le formulaire ci-dessous.
+          Vous pouvez nous contacter sur <MailTo/>, 
+          par message privé sur <FacebookLink/> ou via le formulaire ci-dessous.
         </p>
       </Message>
       <hr/>

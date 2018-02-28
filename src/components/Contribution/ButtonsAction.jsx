@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import { SITE_URL } from '../../lib/constants'
 import Modal from '../Modal'
 import Icon from '../Utils/Icon'
 import Share from '../Utils/Share'
@@ -32,7 +33,7 @@ export default class ButtonsAction extends React.PureComponent {
                    title={<div><Icon name="share-alt"/><span> &nbsp;Partager</span></div>}>
               <Share message={`${contribution.FirstName} ${contribution.LastName} - "${contribution.Title}"`}
                      hashTags={['EtSiDemain', 'NouvelleCalédonie', '2018']}
-                     url={`https://etsidemain.nc/contribution/${contribution.id}`}/>
+                     url={`${SITE_URL}/contribution/${contribution.id}`}/>
             </Modal>
           }
         </div>
