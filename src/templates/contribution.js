@@ -43,9 +43,9 @@ export default class ContributionPage extends React.PureComponent {
     const meta = {image: "/banner.jpg", type: "image/jpeg", width: "1200", height: "630"}
     const videoId = youtubeId(this.props.pathContext.contribution.Content)
     if (videoId) {
-      meta.image = youtubeThumbnail(videoId)
-      meta.width = "640"
-      meta.height = "480"
+      meta.image = youtubeThumbnail(videoId, 'maxresdefault')
+      meta.width = "1280"
+      meta.height = "720"
     }
       
     return [
