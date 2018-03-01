@@ -13,7 +13,7 @@ export default class Categories extends React.PureComponent {
     return (
       <div className="section page-categories">
         <Helmet>
-          <meta property="og:title" content="Des arguments, des questions, des idées pour 2018 et après. La catégorie Citoyenneté va vous étonner !"/>
+          <meta property="og:description" content="Des arguments, des questions, des idées pour 2018 et après. La catégorie Citoyenneté va vous étonner !"/>
           <meta property="og:image" content={SITE_URL + '/opengraph/categories.jpg'}/>
           <meta property="og:image:width" content="1200"/>
           <meta property="og:image:height" content="600"/>
