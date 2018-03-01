@@ -26,6 +26,7 @@ class TemplateWrapper extends React.PureComponent {
           <meta name="msapplication-config" content="/favicons/browserconfig.xml"/>
           <meta name="theme-color" content="#4497AE"/>
           <meta name="description" content={META_DESCRIPTION}/>
+          <meta name="keywords" content="référendum,2018,nouvelle calédonie,NC,débat,citoyen,politique,partage,civic tech"/>
           <meta property="og:locale" content="fr_FR"/>
           <meta property="og:title" content="Et si demain..."/>
           <meta property="og:description" content={META_DESCRIPTION}/>

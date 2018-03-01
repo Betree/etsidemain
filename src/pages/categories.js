@@ -1,6 +1,9 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import slugify from 'voca/slugify'
+
+import { SITE_URL } from '../lib/constants'
 
 
 export default class Categories extends React.PureComponent {
@@ -9,6 +12,12 @@ export default class Categories extends React.PureComponent {
     const categories = this.props.data.dataJson.Categories
     return (
       <div className="section page-categories">
+        <Helmet>
+          <meta name="og:title" content="Des arguments, des questions, des idées pour 2018 et après. La catégorie Citoyenneté va vous étonner !"/>
+          <meta name="og:image" content={SITE_URL + '/opengraph/categories.jpg'}/>
+          <meta name="og:image:width" content="1200"/>
+          <meta name="og:image:height" content="600"/>
+        </Helmet>
         <div className="container columns is-multiline is-centered">
         {isMobile === true && categories.map(c => <StaticCategory key={c} category={c} slug={slugify(c)}/>)}
         {isMobile === false && categories.map(c => <AnimatedCategory key={c} category={c} slug={slugify(c)}/>)}
