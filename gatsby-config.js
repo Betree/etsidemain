@@ -23,7 +23,17 @@ module.exports = {
       options: require("./src-gatsby/plugin_options/gatsby-plugin-feed"),
     },
     `gatsby-transformer-json`,
-    //`gatsby-plugin-netlify`,
-    `gatsby-plugin-nprogress`
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-59963298-3",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: false,
+      },
+    },
+    `gatsby-plugin-nprogress`,
+    `gatsby-plugin-netlify`,
   ],
 }
