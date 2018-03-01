@@ -13,10 +13,10 @@ export default class Categories extends React.PureComponent {
     return (
       <div className="section page-categories">
         <Helmet>
-          <meta name="og:title" content="Des arguments, des questions, des idées pour 2018 et après. La catégorie Citoyenneté va vous étonner !"/>
-          <meta name="og:image" content={SITE_URL + '/opengraph/categories.jpg'}/>
-          <meta name="og:image:width" content="1200"/>
-          <meta name="og:image:height" content="600"/>
+          <meta property="og:title" content="Des arguments, des questions, des idées pour 2018 et après. La catégorie Citoyenneté va vous étonner !"/>
+          <meta property="og:image" content={SITE_URL + '/opengraph/categories.jpg'}/>
+          <meta property="og:image:width" content="1200"/>
+          <meta property="og:image:height" content="600"/>
         </Helmet>
         <div className="container columns is-multiline is-centered">
         {isMobile === true && categories.map(c => <StaticCategory key={c} category={c} slug={slugify(c)}/>)}
